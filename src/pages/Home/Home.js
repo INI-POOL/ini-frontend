@@ -28,7 +28,7 @@ const login = async (values) => {
           width="100%"
           px={{ base: "1rem", md: "0" }}
         >
-          body
+          body~content
          
         </Box>
       </Box>
