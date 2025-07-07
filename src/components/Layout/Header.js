@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box,Button,Flex,Text } from '@chakra-ui/react';
+import logo from '@/assets/logo.svg'
 
 const Header = () => {
   return (
@@ -13,9 +14,9 @@ const Header = () => {
         borderRadius="md"
       >
         <Text fontSize="lg" fontWeight="bold" color="orange.700">
-          左边的文字
+          <img src={logo} alt="logo" />
         </Text>
-        <Button colorScheme="orange">右边按钮</Button>
+        {/* <Button colorScheme="orange">右边按钮</Button> */}
       </Flex>
       </Box>
     </Box>

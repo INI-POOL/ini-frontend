@@ -1,13 +1,28 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
+import x from '@/assets/x.svg'
+import telegram from '@/assets/telegram.svg'
+import github from '@/assets/github.svg'
+import discord from '@/assets/discord.svg'
+import logo from '@/assets/logo.svg'
+import './footer.scss'
 
 const Footer = () => {
   return (
-    <Box as="footer"  py={4} mt="auto">
-      <Box maxWidth="container.xl" mx="auto" px={4}>
-        {/* Footer content */}
-      Footer
-      </Box>
+    <Box as="footer" className='commonBg' py={4} mt="auto">
+      <Flex className='footer-content' justify="center" align="center" >  
+        <img src={logo} alt="" />
+        <text  w="100%" p={4} className='text-desc'>
+        Powered by INIPool Mining. Your trusted platform for secure, profitable cryptocurrency mining. Start earning today.
+        </text>
+        <Flex align="center" justify="center">
+          <img src={x} alt="" />
+          <img src={discord} alt="" />
+          <img src={github} alt="" />
+          <img src={telegram} alt="" />
+        </Flex>
+      </Flex>
+     
     </Box>
   );
 };

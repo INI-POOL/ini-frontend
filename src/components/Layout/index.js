@@ -6,8 +6,8 @@ import { Container, Box } from "@chakra-ui/react"
 
 const Layout = () => {
   return (
-    <Box minH="100vh" display="flex" flexDirection="column">
-      <Header />
+    <Box minH="80vh" display="flex" flexDirection="column" width="100vw">
+     
       <Container 
         as="main" 
         maxWidth={{ 
@@ -19,10 +19,13 @@ const Layout = () => {
         px={{ base: "2rem", md: "7.5rem" }}
         py={{ base: 0, md: 0 }}
       >
+        <Header />
         
-        <Outlet />
+        <Outlet/>
+
+        <Footer />
       </Container>
-      <Footer />
+      
     </Box>
   );
 };
