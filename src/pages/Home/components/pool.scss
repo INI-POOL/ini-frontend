@@ -1,0 +1,17 @@
+.poolWapper{
+    .poolTitle{
+        display: flex;
+        padding: 0.9375rem;
+        align-items: center;
+        gap: 0.625rem;
+        align-self: stretch;
+    }
+    .poolItem{
+        display: flex;
+        padding: 0.9375rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        align-self: stretch;
+    }
+}

@@ -1,3 +1,35 @@
 .homoPage{
   // background: #0005F5F5;
+  .title{
+    color: #FFF;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    padding-left: 1.88rem;
+  }
+  .table-wapper{
+    display: flex;
+    padding: 0.9375rem 1.875rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    align-self: stretch;
+    .table-content{
+      // display: flex;
+      padding: 0.9375rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.625rem;
+      align-self: stretch;
+
+      border-radius: 0.9375rem;
+      background: #060811;
+      td{
+        color: #FFF;
+        border: none;
+      }
+    }
+  }
 }

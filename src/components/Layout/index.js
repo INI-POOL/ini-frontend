@@ -6,7 +6,7 @@ import { Container, Box } from "@chakra-ui/react"
 
 const Layout = () => {
   return (
-    <Box minH="80vh" display="flex" flexDirection="column" width="100vw">
+    <Box minH="80vh" display="flex" flexDirection="column" width="100vw" style={{background:"#060811"}}>
      
       <Container 
         as="main" 

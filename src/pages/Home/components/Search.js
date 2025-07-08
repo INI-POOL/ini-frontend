@@ -10,13 +10,13 @@ const SearchInput=()=> {
   
     return (
       <InputGroup size="md">
-        <Input
+        {/* <Input
           pr="4.5rem"
           placeholder="Enter password"
         />
           <Button h="1.75rem" size="sm">
            111
-          </Button>
+          </Button> */}
         {/* <InputRightElement width="4.5rem">
           <Button h="1.75rem" size="sm" onClick={handleClick}>
             {show ? "Hide" : "Show"}
