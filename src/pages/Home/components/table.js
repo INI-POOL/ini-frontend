@@ -1,26 +1,35 @@
 
-import { Table } from "@chakra-ui/react"
+import { Table,Text } from "@chakra-ui/react"
 import { color } from "echarts";
 
 const DataTable = () => {
   return (
     
-    <Table.ScrollArea borderWidth="0px" rounded="md" height="160px">
-    <Table.Root size="sm" stickyHeader>
+    <Table.ScrollArea borderWidth="0px" rounded="md" height="300px">
+    <Table.Root size="sm" stickyHeader variant="unstyled">
       <Table.Header>
-        <Table.Row bg="#060811">
-          <Table.ColumnHeader>Product</Table.ColumnHeader>
-          <Table.ColumnHeader>Category</Table.ColumnHeader>
-          <Table.ColumnHeader textAlign="end">Price</Table.ColumnHeader>
+        <Table.Row bg="#060811" py="0.9375rem">
+          <Table.ColumnHeader  borderWidth="0px" textAlign="center" fontSize="0.875rem">
+            <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Product</Text>
+            </Table.ColumnHeader>
+          <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Category</Text></Table.ColumnHeader>
+          <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Price</Text></Table.ColumnHeader>
         </Table.Row>
       </Table.Header>
 
       <Table.Body>
         {items.map((item) => (
-          <Table.Row key={item.id} bg="#060811">
-            <Table.Cell>{item.name}</Table.Cell>
-            <Table.Cell>{item.category}</Table.Cell>
-            <Table.Cell textAlign="end">{item.price}</Table.Cell>
+          <Table.Row key={item.id} bg="#060811" py="0.9375rem">
+            <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.name}</Table.Cell>
+            <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.category}</Table.Cell>
+            <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.price}</Table.Cell>
+          </Table.Row>
+        ))}
+         {items.map((item) => (
+          <Table.Row key={item.id} bg="#060811" py="0.9375rem">
+            <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.name}</Table.Cell>
+            <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.category}</Table.Cell>
+            <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.price}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>

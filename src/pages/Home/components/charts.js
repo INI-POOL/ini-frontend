@@ -1,25 +1,18 @@
 import React from 'react';
-import { Box,Button,Flex,Text } from '@chakra-ui/react';
+import { Box,Button,Flex,Text,Grid,GridItem } from '@chakra-ui/react';
 import logo from '@/assets/logo.svg'
+import PoolModuleData from './pool.module.js';
 
 const ChartData = () => {
     return (
-        <Flex justify="space-between" align="center" p={4} borderRadius="md">
-          <div className='commonBg'>222</div>
-          <Flex className='commonBg poolWapper'  flexDirection={"column"}>
-            <Text className='poolTitle'>
-            Mining Pool Information
-            </Text>
-            <Box>
-              
-            </Box>
-
-          </Flex>
-            {/* <Text fontSize="lg" fontWeight="bold" color="orange.700">
-            <img src={logo} alt="logo" />
-            </Text>
-            <Button colorScheme="orange">右边按钮</Button> */}
-        </Flex>
+    <Grid templateColumns="repeat(4, 1fr)" gap="6">
+      <GridItem colSpan={3} className='commonBg'>
+        图表
+      </GridItem>
+      <GridItem colSpan={1} className='commonBg'>
+      <PoolModuleData />
+      </GridItem>
+    </Grid>
     )
 }
 
