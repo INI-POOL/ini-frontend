@@ -12,7 +12,7 @@ const SearchInput = () => {
   return (
     <InputGroup
      padding={0}
-     borderRadius={0.9375}
+     style={{borderRadius:"0.9375rem"}}
      border="1px solid var(--input-border, #3B3B3B);"
       endElement={
         <Button  onClick={() => navigate('/mining')}>
@@ -26,7 +26,7 @@ const SearchInput = () => {
         placeholder="Enter your message"
         value={value}
         border={"none"}
-        borderRadius={0.9375}
+        borderRadius={"0.9375rem"}
         onChange={(e) => {
           setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))
         }}

@@ -4,7 +4,7 @@ import './pool.module.scss';
 
 const PoolModuleData = () => {
     return (
-          <Flex className='poolWapper'  flexDirection={"column"}>
+          <Flex className='poolWapper'  flexDirection={"column"} style={{textAlign:'left'}}>
             <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" padding='0.9375rem'>
             Mining Pool Information
             </Text>
