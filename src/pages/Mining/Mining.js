@@ -20,7 +20,10 @@ const Mining = () => {
                 <BaseInfo />
             </div>
             <div style={{ marginBottom: '1.56rem' }} className='chart-wapper'>
+                <Text>24H  Hashrate</Text>
+                <Flex>
                 <ChartPanel />
+                </Flex>
             </div>
             <div className='commonBg' py={{ base: '0' }} px={{ base: '0' }} style={{ marginBottom: '1.56rem' }}>
                 <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>

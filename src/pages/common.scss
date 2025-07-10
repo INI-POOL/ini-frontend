@@ -30,3 +30,26 @@
     gap: 1.875rem;
     align-self: stretch;
   }
+  .search-btn{
+    display: flex;
+    min-width: 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    border-radius: 0.3125rem;
+    background: linear-gradient(90deg, #C9BFFF 0%, #AC9DFB 100%);
+  }
+  .search-btn:hover{
+    background: linear-gradient(90deg, #AC9DFB 0%, #C9BFFF 100%);
+  }
+  .search-ico{
+    width: 0.875rem;
+    height: 0.875rem;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    color: #060811;
+  }

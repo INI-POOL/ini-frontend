@@ -26,10 +26,10 @@ const option = {
 
 export default function ChartPanel() {
   return (
-    <Box p={6} style={{ background: 'none' }} borderRadius="md" boxShadow="md">
-      <Heading size="md" mb={4} textAlign="left">
+    <Box p={6} style={{ background: 'none',width:"100%" }} borderRadius="md" boxShadow="md">
+      {/* <Heading size="md" mb={4} textAlign="left">
         柱状图示例
-      </Heading>
+      </Heading> */}
       <ReactECharts option={option} style={{ height: '400px', width: '100%' }} />
     </Box>
   );
