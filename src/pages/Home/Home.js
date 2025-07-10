@@ -5,7 +5,9 @@ import SearchInput from './components/Search.js';
 import DataTable from './components/table.js';
 import ChartData from './components/charts.js';
 
+
 import './home.scss';
+import '../common.scss';
 // import {Charts} from './components/charts';
 
 import { userApi } from '@/services/api';

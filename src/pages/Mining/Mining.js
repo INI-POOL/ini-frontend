@@ -1,9 +1,10 @@
 import React from 'react';
-import { Box, Input, InputGroup, InputLeftElement, Flex,VStack,Text,Button } from '@chakra-ui/react';
+import { Box, Input, InputGroup, InputLeftElement, Flex, VStack, Text, Button } from '@chakra-ui/react';
 import './mining.scss';
 import BaseInfo from './components/info';
 import ChartPanel from './components/ChartLine';
 import DataTable from './components/machinesTable';
+import '../common.scss';
 
 const Mining = () => {
 
@@ -15,28 +16,27 @@ const Mining = () => {
             position="relative"
         >
             <div>
-            <BaseInfo />
+                <BaseInfo />
             </div>
             <div style={{ marginBottom: '1.56rem' }}>
-            <ChartPanel />
+                <ChartPanel />
             </div>
             <div className='commonBg' style={{ marginBottom: '1.56rem' }}>
-        <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
-          <Text className='title'>MINING SERVERS</Text>
-          <Box className='table-wapper'>
-            <DataTable />
-          </Box>
-        </Flex>
-      </div>
-      <div className='commonBg' style={{ marginBottom: '1.56rem' }}>
-        <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
-          <Text className='title'>MINING SERVERS</Text>
-          <Box className='table-wapper'>
-            <DataTable />
-          </Box>
-        </Flex>
-      </div>
-            
+                <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
+                    <Flex className='title'>MINING SERVERS11</Flex>
+                    <Box className='table-wapper'>
+                        <DataTable />
+                    </Box>
+                </Flex>
+            </div>
+            <div className='commonBg'>
+                <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
+                    <Flex className='title'>MINING SERVERS</Flex>
+                    <Box className='table-wapper'>
+                        <DataTable />
+                    </Box>
+                </Flex>
+            </div>
         </Box>
     )
 }
