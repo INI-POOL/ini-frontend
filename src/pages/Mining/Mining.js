@@ -14,24 +14,25 @@ const Mining = () => {
             w="full" // w=full
             p={8}
             position="relative"
+            className='mining'
         >
             <div>
                 <BaseInfo />
             </div>
-            <div style={{ marginBottom: '1.56rem' }}>
+            <div style={{ marginBottom: '1.56rem' }} className='chart-wapper'>
                 <ChartPanel />
             </div>
-            <div className='commonBg' style={{ marginBottom: '1.56rem' }}>
+            <div className='commonBg' py={{ base: '0' }} px={{ base: '0' }} style={{ marginBottom: '1.56rem' }}>
                 <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
                     <Flex className='title'>
                         <Text>
                         Mining Machine
                         </Text>
                         
-                        <Stack direction="row" spacing={'0.625rem'}>
-                            <Badge fontSize={'0.75rem'}>All (295)</Badge>
-                            <Badge fontSize={'0.75rem'} colorPalette="green">Success</Badge>
-                            <Badge fontSize={'0.75rem'} colorPalette="red">Removed</Badge>
+                        <Stack direction="row" spacing={'0.625rem'} className='filter'>
+                            <Badge className='check'>All (295)</Badge>
+                            <Badge className='uncheck' >Online (283)</Badge>
+                            <Badge className='uncheck red'>Offline (12)</Badge>
                         </Stack>
 
                     </Flex>
@@ -40,7 +41,7 @@ const Mining = () => {
                     </Box>
                 </Flex>
             </div>
-            <div className='commonBg'>
+            <div className='commonBg'  py={{ base: '0' }} px={{ base: '0' }} style={{ marginBottom: '1.56rem' }}>
                 <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
                     <Flex className='title'>Billing List</Flex>
                     <Box className='table-wapper'>

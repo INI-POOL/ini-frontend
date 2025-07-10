@@ -1,5 +1,28 @@
 .mining {
-  background-color: #f5f5f5;
+  // background-color: #f5f5f5; 
+  .filter{
+    color: #fff;
+    cursor: pointer;
+    .check{
+      display: flex;
+      padding: 0.1875rem;
+      justify-content: center;
+      align-items: center;
+      gap: 0.625rem;
+      border-radius: 0.3125rem;
+      background: #363646;
+      color: #fff;
+      font-size: 0.75rem;
+    }
+    .uncheck{
+      background: none;
+      font-size: 0.75rem;
+      color: #fff;
+      &.red{
+        color: red;
+      }
+    }
+  }
   .title{
     color: #FFF;
     font-size: 1rem;
