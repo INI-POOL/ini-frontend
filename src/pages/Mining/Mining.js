@@ -21,7 +21,7 @@ const Mining = () => {
             </div>
             <div style={{ marginBottom: '1.56rem' }} className='chart-wapper'>
                 <Text>24H  Hashrate</Text>
-                <Flex>
+                <Flex style={{width:"100%"}}>
                 <ChartPanel />
                 </Flex>
             </div>
