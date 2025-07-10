@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Input, InputGroup, InputLeftElement, Flex, VStack, Text, Button } from '@chakra-ui/react';
-import './mining.scss';
+import { Box, Flex, Text, Stack, Badge } from '@chakra-ui/react';
 import BaseInfo from './components/info';
 import ChartPanel from './components/ChartLine';
 import DataTable from './components/machinesTable';
-import '../common.scss';
+import '@/pages/common.scss';
+import './mining.scss';
 
 const Mining = () => {
 
@@ -23,7 +23,18 @@ const Mining = () => {
             </div>
             <div className='commonBg' style={{ marginBottom: '1.56rem' }}>
                 <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
-                    <Flex className='title'>MINING SERVERS11</Flex>
+                    <Flex className='title'>
+                        <Text>
+                        Mining Machine
+                        </Text>
+                        
+                        <Stack direction="row" spacing={'0.625rem'}>
+                            <Badge fontSize={'0.75rem'}>All (295)</Badge>
+                            <Badge fontSize={'0.75rem'} colorPalette="green">Success</Badge>
+                            <Badge fontSize={'0.75rem'} colorPalette="red">Removed</Badge>
+                        </Stack>
+
+                    </Flex>
                     <Box className='table-wapper'>
                         <DataTable />
                     </Box>
@@ -31,7 +42,7 @@ const Mining = () => {
             </div>
             <div className='commonBg'>
                 <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
-                    <Flex className='title'>MINING SERVERS</Flex>
+                    <Flex className='title'>Billing List</Flex>
                     <Box className='table-wapper'>
                         <DataTable />
                     </Box>
