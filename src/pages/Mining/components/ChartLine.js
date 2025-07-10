@@ -15,7 +15,12 @@ const option = {
   },
   tooltip: {},
   xAxis: {
+    boundaryGap: false,
     data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+    axisLabel: {
+      color: '#858585',
+      fontSize: 12,
+    },
     splitLine:{
       show:false
     }
@@ -42,7 +47,7 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgba(14, 156, 255, 0.6)' // 顶部颜色
+            color: 'rgba(14, 156, 255, 0.2)' // 顶部颜色
           },
           {
             offset: 1,

@@ -17,6 +17,11 @@ const option = {
   tooltip: {},
   xAxis: {
     data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+    boundaryGap: false,
+    axisLabel: {
+      color: '#858585',
+      fontSize: 12,
+    },
     splitLine:{
       show:false
     }
@@ -43,7 +48,7 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgba(14, 156, 255, 0.6)' // 顶部颜色
+            color: 'rgba(14, 156, 255, 0.2)' // 顶部颜色
           },
           {
             offset: 1,
@@ -62,7 +67,7 @@ export default function ChartPanel() {
       {/* <Heading size="md" mb={4}>
         柱状图示例
       </Heading> */}
-      <ReactECharts option={option} style={{ height: '400px', width: '100%' }} />
+      <ReactECharts option={option} style={{ height: '300px', width: '100%' }} />
     </Box>
   );
 }

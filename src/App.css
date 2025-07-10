@@ -4,7 +4,7 @@
 }
 .commonBg{
   border-radius: 0.9375rem;
-  padding-bottom: 1.25rem;
+  /* padding-bottom: 1.25rem; */
   color: #fff;
   background: linear-gradient(109deg, rgba(217, 217, 217, 0.05) 16.57%, rgba(115, 115, 115, 0.04) 96.9%);
 }

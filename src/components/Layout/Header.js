@@ -11,7 +11,7 @@ const Header = () => {
   console.log("isHomePage", isHomePage);
 
   return (
-    <Box as="header" py={4} boxShadow="sm" height={"7rem"} bg="black">
+    <Box as="header" py={4} boxShadow="sm" height={"5rem"} bg="black">
       <Box maxWidth="container.xl" mx="auto" px={0}>
         <Flex
           justify="space-between"
