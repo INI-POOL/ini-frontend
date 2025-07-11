@@ -4,7 +4,7 @@ import { Table,Text } from "@chakra-ui/react"
 const DataTable = () => {
   return (
     
-    <Table.ScrollArea borderWidth="0px" rounded="md" height="300px">
+    <Table.ScrollArea borderWidth="0px" rounded="md" height="300px" className="table-scroll-container">
     <Table.Root size="sm" stickyHeader variant="unstyled">
       <Table.Header>
         <Table.Row bg="#060811" py="0.9375rem">

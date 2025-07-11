@@ -1,9 +1,12 @@
-.mining{
-    .title{
-        display: flex;
-        padding: 0rem 1.875rem;
-        align-items: center;
-        gap: 1.875rem;
-        align-self: stretch;
-      }
+.table-scroll-container::-webkit-scrollbar {
+  width: 1px;
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+}
+
+.table-scroll-container::-webkit-scrollbar-track {
+  background-color: transparent;
 }

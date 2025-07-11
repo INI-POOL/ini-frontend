@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Flex, Text } from '@chakra-ui/react';
-import SearchInput from '@/components/Layout/components/Search.js';
-// import SearchInput from './components/Search.js';
+// import SearchInput from '@/components/Layout/components/Search.js';
+import SearchInput from './components/Search.js';
 import DataTable from './components/table.js';
 import ChartData from './components/charts.js';
 

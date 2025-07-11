@@ -1,11 +1,11 @@
 
 import { Table,Text } from "@chakra-ui/react"
-import { color } from "echarts";
+import "./table.scss"
 
 const DataTable = () => {
   return (
     
-    <Table.ScrollArea borderWidth="0px" rounded="md" height="300px">
+    <Table.ScrollArea borderWidth="0px" rounded="md" height="300px" className="table-scroll-container">
     <Table.Root size="sm" stickyHeader variant="unstyled">
       <Table.Header>
         <Table.Row bg="#060811" py="0.9375rem">
@@ -17,7 +17,7 @@ const DataTable = () => {
         </Table.Row>
       </Table.Header>
 
-      <Table.Body>
+      <Table.Body className="table-body">
         {items.map((item) => (
           <Table.Row key={item.id} bg="#060811" py="0.9375rem">
             <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.name}</Table.Cell>
