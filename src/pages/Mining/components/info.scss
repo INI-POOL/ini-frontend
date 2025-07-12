@@ -6,6 +6,14 @@
     gap: 1.875rem;
     align-self: stretch;
     border-bottom: 0.5px solid #1F1F1F;
+    .baseItem{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5625rem;
+        align-self: stretch;
+
+    }
     .baseTitle{
         color: var(--hui, #929292);
         font-size: 0.75rem;

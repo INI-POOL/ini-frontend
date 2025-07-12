@@ -11,50 +11,51 @@ const BaseInfo = () => {
     return (
         <div className="baseinfo" textAlign="left">
             <Flex textAlign="left">
-                <Flex gap="0.625rem">
+                <Flex gap="0.625rem" flexDirection={{ base: "column", md: "row" }}>
                     <Text> 
                         <IconButton className='wallet-wapper'>
                         <img src={wallet} />
                     </IconButton>
                     </Text>
-                    <Text className='value' fontSize={"1.25rem"}>0x845550c855fa64c0f4239ca474f8bb5a125e428b</Text>
+                    <Text className='value' fontSize={["0.875rem","1.25rem"]}>0x845550c855fa64c0f4239ca474f8bb5a125e428b</Text>
                 </Flex>
             </Flex>
             <div textAlign="left" style={{width:"100%"}}>
-                <Grid templateColumns="repeat(7, 1fr)" gap="7" >
+                <Grid templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(7, 1fr)" }}
+  gap={{ base: 4, md: 7 }} >
                     <GridItem>
-                        <VStack gap="0.5625rem">
-                            <Text className='baseTitle'>Total(INI)</Text>
+                        <VStack className='baseItem'>
+                            <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>Total(INI)</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack>
                     </GridItem>
-                    <GridItem><VStack gap="0.5625rem">
+                    <GridItem><VStack className='baseItem'>
                         <Text className='baseTitle'>Total(INI)</Text>
                         <Text className='basevalue'>9154.001152</Text>
                     </VStack></GridItem>
                     <GridItem>
-                        <VStack gap="0.5625rem">
+                        <VStack className='baseItem'>
                             <Text className='baseTitle'>Total(INI)</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack>
                     </GridItem>
                     <GridItem>
-                        <VStack gap="0.5625rem">
+                        <VStack className='baseItem'>
                             <Text className='baseTitle'>Total(INI)</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack></GridItem>
                     <GridItem>
-                        <VStack gap="0.5625rem">
+                        <VStack className='baseItem'>
                             <Text className='baseTitle'>Total(INI)</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack></GridItem>
                     <GridItem>
-                        <VStack gap="0.5625rem">
+                        <VStack className='baseItem'>
                             <Text className='baseTitle'>Total(INI)</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack></GridItem>
                     <GridItem>
-                        <VStack gap="0.5625rem">
+                        <VStack className='baseItem'>
                             <Text className='baseTitle'>Total(INI)</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack></GridItem>
