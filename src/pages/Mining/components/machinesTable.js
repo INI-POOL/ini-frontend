@@ -1,6 +1,6 @@
 
 import { Table,Text } from "@chakra-ui/react"
-
+import './machinesTable.scss'
 const DataTable = () => {
   return (
     
@@ -18,14 +18,14 @@ const DataTable = () => {
 
       <Table.Body>
         {items.map((item) => (
-          <Table.Row key={item.id} bg="#060811" py="0.9375rem">
+          <Table.Row key={item.id} bg="#060811" py="0.9375rem" style={{borderTop:"0.3125rem solid #060811",background: "rgba(255, 255, 255, 0.02)"}}>
             <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.name}</Table.Cell>
             <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.category}</Table.Cell>
             <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.price}</Table.Cell>
           </Table.Row>
         ))}
          {items.map((item) => (
-          <Table.Row key={item.id} bg="#060811" py="0.9375rem">
+          <Table.Row key={item.id} bg="#060811" py="0.9375rem" style={{borderTop:"0.3125rem solid #060811",background: "rgba(255, 255, 255, 0.02)"}}>
             <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.name}</Table.Cell>
             <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.category}</Table.Cell>
             <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.price}</Table.Cell>

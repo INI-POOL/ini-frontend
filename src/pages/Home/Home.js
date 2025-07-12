@@ -36,7 +36,9 @@ const Home = () => {
         <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
           <Text className='title'>MINING SERVERS</Text>
           <Box className='table-wapper'>
-            <DataTable />
+            <div className='table-content'>
+             <DataTable />
+            </div>
           </Box>
         </Flex>
       </div>

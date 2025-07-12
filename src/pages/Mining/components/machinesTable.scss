@@ -10,3 +10,14 @@
 .table-scroll-container::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
+.table-scroll-container{
+  .table-body{
+      .hakra-table__row{
+          margin-bottom: "0.3125rem";    
+          border-radius: 0.625rem;
+          background: rgba(255, 255, 255, 0.02);
+          padding: 0.9375rem 0rem;
+      }
+  }
+}

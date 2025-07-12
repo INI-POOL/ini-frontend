@@ -31,7 +31,7 @@
 
   .data-item{
     display: flex;
-    padding: 0.9375rem 0.85rem;
+    // padding: 0.9375rem 0.85rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
@@ -40,7 +40,7 @@
     border-radius: 0.9375rem;
     border: 1px solid  #3B3B3B;
     .data-item-title{
-        font-size: 0.875rem;
+        // font-size: 0.875rem;
         font-style: normal;
         font-weight: 400;
         line-height: normal;

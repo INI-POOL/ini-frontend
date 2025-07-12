@@ -19,7 +19,7 @@ const Mining = () => {
             <div>
                 <BaseInfo />
             </div>
-            <div style={{ marginBottom: '1.56rem' }} className='chart-wapper'>
+            <div style={{ marginBottom: '1.56rem',marginTop:'3.75rem' }} className='chart-wapper'>
                 <Text>24H  Hashrate</Text>
                 <Flex style={{width:"100%"}}>
                 <ChartPanel />
@@ -40,7 +40,9 @@ const Mining = () => {
 
                     </Flex>
                     <Box className='table-wapper'>
+                        <div className='table-content'>
                         <DataTable />
+                        </div>
                     </Box>
                 </Flex>
             </div>
@@ -48,7 +50,9 @@ const Mining = () => {
                 <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
                     <Flex className='title'>Billing List</Flex>
                     <Box className='table-wapper'>
+                    <div className='table-content'>
                         <DataTable />
+                    </div>
                     </Box>
                 </Flex>
             </div>

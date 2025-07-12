@@ -63,10 +63,7 @@ const option = {
 
 export default function ChartPanel() {
   return (
-    <Box p={6}  borderRadius="md" boxShadow="md">
-      {/* <Heading size="md" mb={4}>
-        柱状图示例
-      </Heading> */}
+    <Box p={6}  borderRadius="md" boxShadow="md" padding={{base:"0.4375rem 0.625rem",md:"0.9375rem"}}>
       <ReactECharts option={option} style={{ height: '300px', width: '100%' }} />
     </Box>
   );
