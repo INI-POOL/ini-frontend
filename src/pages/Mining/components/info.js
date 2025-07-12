@@ -9,7 +9,7 @@ import { Box, Input, InputGroup, InputLeftElement, Flex, VStack, Text, Button } 
 
 const BaseInfo = () => {
     return (
-        <div className="baseinfo" textAlign="left">
+        <div className="baseinfo " textAlign="left">
             <Flex textAlign="left">
                 <Flex gap="0.625rem" flexDirection={{ base: "column", md: "row" }}>
                     <Text> 
@@ -30,57 +30,38 @@ const BaseInfo = () => {
                         </VStack>
                     </GridItem>
                     <GridItem><VStack className='baseItem'>
-                        <Text className='baseTitle'>Total(INI)</Text>
+                        <Text className='baseTitle'>Latest Earnings (INI)</Text>
                         <Text className='basevalue'>9154.001152</Text>
                     </VStack></GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
-                            <Text className='baseTitle'>Total(INI)</Text>
+                            <Text className='baseTitle'>One Day (INI)</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack>
                     </GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
-                            <Text className='baseTitle'>Total(INI)</Text>
+                            <Text className='baseTitle'>One Week (INI)</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack></GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
-                            <Text className='baseTitle'>Total(INI)</Text>
+                            <Text className='baseTitle'>Real-time Hashrate</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack></GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
-                            <Text className='baseTitle'>Total(INI)</Text>
+                            <Text className='baseTitle'>Average Daily Hashrate</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack></GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
-                            <Text className='baseTitle'>Total(INI)</Text>
+                            <Text className='baseTitle'>Mining Machines</Text>
                             <Text className='basevalue'>9154.001152</Text>
                         </VStack></GridItem>
                 </Grid>
             </div>
         </div>
-        // <Box
-        //     minH="100vh"
-        //     w="full" // w=full
-        //     p={8}
-        //     position="relative"
-        // >
-        //     <Flex justify="space-between" align="start">
-        //         <Box flex="1">
-        //             <VStack
-        //                 spacing={6}
-        //                 align="center"
-        //                 justify="center"
-        //                 h="80vh"
-        //             >
-        //                12121
-        //             </VStack>   
-        //             </Box>
-        //             </Flex>
-        //             </Box>
     )
 }
 

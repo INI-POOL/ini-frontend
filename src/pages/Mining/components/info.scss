@@ -46,3 +46,15 @@
         background: linear-gradient(270deg, rgba(170, 142, 255, 0.20) 0%, rgba(212, 197, 255, 0.20) 100%);
     }
 }
+@media (max-width: 768px) {
+    .baseinfo {
+      display: flex;
+      padding: 1.25rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.875rem;
+
+      border-radius: 0.625rem;
+background: #10121A;
+    }
+  }

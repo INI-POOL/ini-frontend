@@ -15,11 +15,12 @@ const Mining = () => {
             p={8}
             position="relative"
             className='mining'
+
         >
             <div>
                 <BaseInfo />
             </div>
-            <div style={{ marginBottom: '1.56rem',marginTop:'3.75rem' }} className='chart-wapper'>
+            <div style={{ marginBottom: '1.56rem' }} marginTop={{base:"1.25rem",sm:"3.75rem"}} className='chart-wapper'>
                 <Text>24H  Hashrate</Text>
                 <Flex style={{width:"100%"}}>
                 <ChartPanel />
