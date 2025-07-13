@@ -53,3 +53,17 @@
     aspect-ratio: 1/1;
     color: #060811;
   }
+
+
+
+  /* 手机端（最大宽度768px） */
+@media (max-width: 768px) {
+  // .box {
+  //   background-color: #f7f7f7;
+  //   padding: 1rem;
+  //   font-size: 14px;
+  // }
+  .isMobileHide{
+    display: none;
+  }
+}

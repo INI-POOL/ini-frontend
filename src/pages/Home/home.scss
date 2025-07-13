@@ -28,6 +28,18 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .myinput{
+    border: none;
+    &:focus{
+      border: none;
+    }
+    &::shadow{
+      border: none;
+    }
+    &:hover{
+      border: none;
+    }
+  }
 
   .data-item{
     display: flex;

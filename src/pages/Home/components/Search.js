@@ -1,5 +1,5 @@
 
-import { Button, Input, InputGroup, Span } from "@chakra-ui/react"
+import {  Input, InputGroup,Text } from "@chakra-ui/react"
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import { IconButton } from "@chakra-ui/react"
@@ -13,27 +13,38 @@ const SearchInput = () => {
   const navigate = useNavigate();
   return (
     <InputGroup
-     padding={0}
-     style={{borderRadius:"0.625rem"}}
+     padding={"0.625rem 0.625rem 0.625rem 1.25rem"}
      border="1px solid var(--input-border, #3B3B3B);"
+     height={{base:"2.5rem",md:"3.75rem"}}
+     _hover={{
+      border: "1px solid var(--input-border, #3B3B3B)", // 不变色
+      boxShadow: "none"
+    }}
+    _focusWithin={{
+      border: "1px solid var(--input-border, #3B3B3B)", // 保持一致
+      boxShadow: "none"
+    }}
+     borderRadius={{base: "0.625rem",md:"0.9375rem"}}
       endElement={
-        // <Button  onClick={() => navigate('/mining')} style={{borderRadius:"0.9375rem",borderRadius: "0.3125rem",
-        //   background: "linear-gradient(90deg, #C9BFFF 0%, #AC9DFB 100%)"}} >
-        //  <LuSearch className="search-ico"/>
-        //   搜索
-        // </Button>
-
-          <IconButton  className="search-btn" style={{width:'4rem'}} onClick={() => navigate('/mining')}>
-            <LuSearch className="search-ico"/>搜索
+          <IconButton backgroundColor={'linear-gradient(90deg, #C9BFFF 0%, #AC9DFB 100%)'}  
+          className="search-btn" height={{base:"1.5rem",md:"2.5rem"}} 
+          width={{base:"1.5rem",md:"7.5rem"}}  onClick={() => navigate('/mining')}>
+            <LuSearch className="search-ico" width={{base:"0.875rem",md:"1.25rem"}} height={{base:"0.875rem",md:"1.25rem"}}/>
+            <Text className="isMobileHide" color={"#000"}>Search</Text>
           </IconButton>
   
       }
     >
       <Input
-        placeholder="Enter your message"
+        placeholder="Please enter the miner's address to search for the miner."
         value={value}
-        border={"none"}
-        borderRadius={"0.625rem"}
+        className="myinput"
+        padding={"0.625rem 0.625rem 0.625rem 1.25rem"}
+        height={{base:"2.5rem",md:"3.75rem"}}
+        focusBorderColor="transparent"
+        border= "none"
+        _hover={{ border: "none", boxShadow: "none" }}
+        _focus={{ border: "none", boxShadow: "none" }}
         onChange={(e) => {
           setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))
         }}

@@ -4,10 +4,11 @@ import './pool.module.scss';
 
 const PoolModuleData = () => {
     return (
-          <Flex className='poolWapper'  flexDirection={"column"} style={{textAlign:'left'}}>
+          <Flex className='poolWapper' height={'100%'}  flexDirection={"column"} style={{textAlign:'left'}}>
             <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" padding='0.9375rem'>
             Mining Pool Information
             </Text>
+       
             <Box className='poolItem' padding='0.9375rem'>
             <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
             Settlement Mode
@@ -44,7 +45,7 @@ const PoolModuleData = () => {
               </Text>
             </Box>
 
-            <Box className='poolItem' padding='0.9375rem'>
+            <Box className='poolItem' mt="auto" padding='0.9375rem'>
             <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
             Mining Servers
               </Text>

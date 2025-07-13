@@ -36,6 +36,7 @@ const option = {
       name: '',
       type: 'line',
       smooth: true,
+      symbol: 'none',        // ❗️隐藏数据点圆圈
       areaStyle: {
         color: 'rgba(0, 0, 0, 0.1)',
       },

@@ -14,7 +14,12 @@ const option = {
     top:0,
     bottom:'10%'
   },
-  tooltip: {},
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'line'
+    }
+  },
   xAxis: {
     data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
     boundaryGap: false,
@@ -37,6 +42,7 @@ const option = {
       name: '',
       type: 'line',
       smooth: true,
+      symbol: 'none',        // ❗️隐藏数据点圆圈
       areaStyle: {
         color: 'rgba(0, 0, 0, 0.1)',
       },
