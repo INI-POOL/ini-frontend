@@ -34,8 +34,10 @@ const Home = () => {
 
       <div className='commonBg' style={{ marginBottom: '1.56rem' }}>
         <Flex py={{ base: '1.25rem' }} style={{ gap: '0.625rem' }} flexDirection={"column"}>
+        <Flex className='title' padding={{base:"0rem 0.9375rem",sm:"0rem 1.875rem"}}>
           <Text className='title'>MINING SERVERS</Text>
-          <Box className='table-wapper'>
+          </Flex>
+          <Box className='table-wapper' gap={{base:"0.625rem"}} padding={{base:"0 0.9375rem"}}>
             <div className='table-content'>
              <DataTable />
             </div>
