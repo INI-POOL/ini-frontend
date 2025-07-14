@@ -53,7 +53,6 @@ const DataModule = () => {
             ].map((title, index) => (
                 <WrapItem
                     key={index}
-                    flexBasis={{ base: "48%", sm: "48%", md: "24%" }}
                     className="data-item"
                     p="4"
                 >

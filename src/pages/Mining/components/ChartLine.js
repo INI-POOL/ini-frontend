@@ -36,7 +36,7 @@ const option = {
       name: '',
       type: 'line',
       smooth: true,
-      symbol: 'none',        // ❗️隐藏数据点圆圈
+      // symbol: 'none',        // ❗️隐藏数据点圆圈
       areaStyle: {
         color: 'rgba(0, 0, 0, 0.1)',
       },
@@ -63,8 +63,8 @@ const option = {
 
 export default function ChartPanel() {
   return (
-    <Box p={6} style={{ background: 'none',width:"100%" }} borderRadius="md" boxShadow="md" padding={{base:"0.4375rem 0.625rem",md:"0.9375rem"}}>
-      <ReactECharts option={option} style={{ width: '100%',background:'none' }} height={{base:"43px",md:"400px"}} />
+    <Box p={6} style={{ background: 'none',width:"100%" }} borderRadius="md" boxShadow="md" >
+      <ReactECharts option={option} style={{ width: '100%',background:'none' }} height={{base:"43px",md:"250px"}} />
     </Box>
   );
 }

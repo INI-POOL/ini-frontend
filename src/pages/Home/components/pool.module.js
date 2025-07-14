@@ -1,62 +1,79 @@
 import React from 'react';
-import { Box,Button,Flex,Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Text, IconButton } from '@chakra-ui/react';
 import './pool.module.scss';
+import { useNavigate } from 'react-router-dom';
+import tutorial from '@/assets/img/tutorial.svg'
+
 
 const PoolModuleData = () => {
-    return (
-          <Flex className='poolWapper' height={'100%'}  flexDirection={"column"} style={{textAlign:'left'}}>
-            <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" padding='0.9375rem'>
-            Mining Pool Information
-            </Text>
-       
-            <Box className='poolItem' padding='0.9375rem'>
-            <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
-            Settlement Mode
-              </Text>
-              <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-              PPS+/PPLNS
-              </Text>
-            </Box>
+  const navigate = useNavigate();
+  return (
+    <Flex className='poolWapper' height={'100%'} flexDirection={"column"} style={{ textAlign: 'left' }}>
+      <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" padding='0.9375rem'>
+        Mining Pool Information
+      </Text>
 
-            <Box className='poolItem' padding='0.9375rem'>
-            <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
-            Mining Pool Fee Rate
-              </Text>
-              <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-              100%
-              </Text>
-            </Box>
+      <Box className='poolItem' padding='0.9375rem'>
+        <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
+          Settlement Mode
+        </Text>
+        <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
+          PPS+/PPLNS
+        </Text>
+      </Box>
 
-            <Box className='poolItem' padding='0.9375rem'>
-            <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
-            Transfer Time (UTC)
-              </Text>
-              <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-              7:30 (UTC)
-              </Text>
-            </Box>
+      <Box className='poolItem' padding='0.9375rem'>
+        <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
+          Mining Pool Fee Rate
+        </Text>
+        <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
+          100%
+        </Text>
+      </Box>
 
-            <Box className='poolItem' padding='0.9375rem'>
-            <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
-            Minimum Daily Payout
-              </Text>
-              <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-              0.1 INI
-              </Text>
-            </Box>
+      <Box className='poolItem' padding='0.9375rem'>
+        <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
+          Transfer Time (UTC)
+        </Text>
+        <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
+          7:30 (UTC)
+        </Text>
+      </Box>
 
-            <Box className='poolItem' mt="auto" padding='0.9375rem'>
-            <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
+      <Box className='poolItem' padding='0.9375rem'>
+        <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
+          Minimum Daily Payout
+        </Text>
+        <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
+          0.1 INI
+        </Text>
+      </Box>
+
+      <Flex className='poolItem' mt="auto" padding='0.9375rem' direction={"column"} gap={"1.25rem"}>
+        <Flex direction={"row"} gap={"0.5rem"}>
+          <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" fontSize='0.75rem' fontWeight='400'>
             Mining Servers
-              </Text>
-              <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-              stratum+tcp://inipool.pool.com:28888
-              </Text>
-              <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-              stratum+tcp://inipool.pool.com:28889
-              </Text>
-            </Box>
-          </Flex>
-    )
+          </Text>
+          <IconButton backgroundColor={'linear-gradient(90deg, #C9BFFF 0%, #AC9DFB 100%)'}
+            className="search-btn" height={{ base: "1.1875rem" }}
+            width={{ base: "4rem" }} onClick={() => navigate('/')}>
+            <Flex padding={"0.125rem 0.1875rem"}>
+              <img src={tutorial} height={"0.9375rem"} />
+              <Text fontSize={"0.75rem"} color={"#000"}>Tutorial</Text>
+            </Flex>
+          </IconButton>
+        </Flex>
+        <Flex gap={"0.625rem"} direction={"column"}>
+          <Text className='poolDesc' borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
+            stratum+tcp://inipool.pool.com:28888
+          </Text>
+          <Text className='poolDesc' borderRadius={"0.3125rem"} fontSize='0.75rem'  padding={"0.1875rem"} fontWeight='400' background="#252525">
+            stratum+tcp://inipool.pool.com:28889
+          </Text>
+        </Flex>
+
+      </Flex>
+    </Flex>
+  )
 }
 export default PoolModuleData

@@ -20,8 +20,8 @@ const ChartData = () => {
             <HStack gap={"0.625rem"}          
             mt={{ base: 0, sm: 0 }}
             justify={{ base: "flex-start", sm: "flex-end" }}>
-              <Text fontSize={{base:"0.75rem"}} style={{borderRadius: "0.3125rem",padding: "0.1875em",background: "#363646"}}>近7天</Text>
-              <Text fontSize={{base:"0.75rem"}} color={"#666"}>近30天</Text>
+              <Text fontSize={{base:"0.75rem"}} style={{borderRadius: "0.3125rem",padding: "0.1875em",background: "#363646"}}>24H</Text>
+              <Text fontSize={{base:"0.75rem"}} color={"#666"}>7Day</Text>
             </HStack>
           </Flex>
           <ChartPanel />

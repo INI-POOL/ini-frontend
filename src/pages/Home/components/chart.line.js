@@ -21,11 +21,12 @@ const option = {
     }
   },
   xAxis: {
-    data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+    data: ['2.6', '2.7', '2.8', '2.9', '2.10', '2.11'],
     boundaryGap: false,
     axisLabel: {
       color: '#858585',
-      fontSize: 12,
+      fontSize: 10,
+
     },
     splitLine:{
       show:false
@@ -42,7 +43,7 @@ const option = {
       name: '',
       type: 'line',
       smooth: true,
-      symbol: 'none',        // ❗️隐藏数据点圆圈
+      // symbol: 'none',        // ❗️隐藏数据点圆圈
       areaStyle: {
         color: 'rgba(0, 0, 0, 0.1)',
       },
@@ -70,7 +71,7 @@ const option = {
 export default function ChartPanel() {
   return (
     <Box p={6}  borderRadius="md" boxShadow="md" padding={{base:"0.4375rem 0.625rem",md:"0.9375rem"}}>
-      <ReactECharts option={option} style={{ height: '300px', width: '100%' }} />
+      <ReactECharts option={option} style={{ height: '250px', width: '100%' }} />
     </Box>
   );
 }
