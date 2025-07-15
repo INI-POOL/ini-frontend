@@ -1,13 +1,23 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Box, Flex, Text, Stack, Badge } from '@chakra-ui/react';
 import BaseInfo from './components/info';
 import ChartPanel from './components/ChartLine';
 import DataTable from './components/machinesTable';
+import AllMachinesTable from './components/AllMachinesTable';
+import OnlineMachinesTable from './components/OnlineMachinesTable';
+import OfflineMachinesTable from './components/OfflineMachinesTable';
 import '@/pages/common.scss';
 import './mining.scss';
 
-const Mining = () => {
 
+const Mining = () => {
+    const [selected, setSelected] = useState('all');
+
+    const options = [
+      { key: 'all', label: 'All (295)' },
+      { key: 'online', label: 'Online (283)' },
+      { key: 'offline', label: 'Offline (12)', extraClass: 'red' }
+    ];
     return (
         <Box
             minH="100vh"
@@ -34,15 +44,35 @@ const Mining = () => {
                         </Text>
                         
                         <Stack direction="row" spacing={'0.625rem'} className='filter'>
-                            <Badge className='check'>All (295)</Badge>
+                            {/* <Badge className='check' onClick={()=>{
+                                console.log(1)
+                            }}>All (295)</Badge>
                             <Badge className='uncheck' >Online (283)</Badge>
-                            <Badge className='uncheck red'>Offline (12)</Badge>
+                            <Badge className='uncheck red'>Offline (12)</Badge> */}
+                             {options.map((option) => (
+                                <Badge
+                                key={option.key}
+                                className={`${selected === option.key ? 'check' : 'uncheck'} ${option.extraClass || ''}`}
+                                onClick={() => setSelected(option.key)}
+                                cursor="pointer"
+                                >
+                                {option.label}
+                                </Badge>
+                            ))}
                         </Stack>
 
                     </Flex>
                     <Box className='table-wapper' gap={{base:"0.625rem"}} padding={{base:"0 0.9375rem"}}>
                         <div className='table-content'>
-                        <DataTable />
+                        {selected === 'all' && (
+                            <AllMachinesTable />
+                        )}
+                        {selected === 'online' && (
+                            <OnlineMachinesTable />
+                        )}
+                        {selected === 'offline' && (
+                            <OfflineMachinesTable />
+                        )}
                         </div>
                     </Box>
                 </Flex>

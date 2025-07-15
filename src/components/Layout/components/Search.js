@@ -3,7 +3,8 @@ import { Button, Input, InputGroup, Span } from "@chakra-ui/react"
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import { IconButton } from "@chakra-ui/react"
-import { LuSearch } from "react-icons/lu"
+// import { LuSearch } from "react-icons/lu"
+import SearchIcon from "@/assets/img/search.svg"
 
 
 const MAX_CHARACTERS = 20
@@ -14,11 +15,12 @@ const SearchInput = () => {
   return (
     <InputGroup
      padding={0}
+     className="myinput"
      style={{borderRadius:"0.625rem"}}
      border="1px solid var(--input-border, #3B3B3B);"
       endElement={
         <IconButton  className="search-btn" onClick={() => navigate('/mining')}>
-          <LuSearch className="search-ico"/>
+          <img src={SearchIcon} alt="search" className="search-ico" />  
         </IconButton>
       }
     >

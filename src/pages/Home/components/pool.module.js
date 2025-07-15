@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Flex, Text, IconButton } from '@chakra-ui/react';
+import { Box, Badge, Flex, Text, IconButton } from '@chakra-ui/react';
 import './pool.module.scss';
 import { useNavigate } from 'react-router-dom';
 import tutorial from '@/assets/img/tutorial.svg'
@@ -64,10 +64,11 @@ const PoolModuleData = () => {
           </IconButton>
         </Flex>
         <Flex gap={"0.625rem"} direction={"column"}>
+        {/* <Badge display="inline-block" >stratum+tcp://inipool.pool.com:28888</Badge> */}
           <Text className='poolDesc' borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
             stratum+tcp://inipool.pool.com:28888
           </Text>
-          <Text className='poolDesc' borderRadius={"0.3125rem"} fontSize='0.75rem'  padding={"0.1875rem"} fontWeight='400' background="#252525">
+          <Text display="inline-block" borderRadius={"0.3125rem"} fontSize='0.75rem'  padding={"0.1875rem"} fontWeight='400' background="#252525">
             stratum+tcp://inipool.pool.com:28889
           </Text>
         </Flex>

@@ -12,10 +12,14 @@ const Layout = () => {
         as="main" 
         maxWidth={{ 
           base: "container.sm",    // 移动端
-          md: "container.md",      // 平板
-          lg: "container.lg",      // 桌面
-          xl: "container.xl"       // 大屏
+          md: "1200px",      // 平板   // 大屏
         }}
+        // maxWidth={{ 
+        //   base: "container.sm",    // 移动端
+        //   md: "container.md",      // 平板
+        //   lg: "container.lg",      // 桌面
+        //   xl: "container.xl"       // 大屏
+        // }}
         px={{ base: "0.75rem", md: "2rem" }}
         py={{ base: "0.625rem", md: 0 }}
       >

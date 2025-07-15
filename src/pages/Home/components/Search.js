@@ -1,9 +1,10 @@
 
-import {  Input, InputGroup,Text } from "@chakra-ui/react"
+import {  Input, InputGroup,Text,Image } from "@chakra-ui/react"
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import { IconButton } from "@chakra-ui/react"
-import { LuSearch } from "react-icons/lu"
+// import { LuSearch } from "react-icons/lu"
+import SearchIcon from "@/assets/img/search.svg"
 
 
 const MAX_CHARACTERS = 20
@@ -29,7 +30,8 @@ const SearchInput = () => {
           <IconButton backgroundColor={'linear-gradient(90deg, #C9BFFF 0%, #AC9DFB 100%)'}  
           className="search-btn" height={{base:"1.5rem",md:"2.5rem"}} 
           width={{base:"1.5rem",md:"7.5rem"}}  onClick={() => navigate('/mining')}>
-            <LuSearch className="search-ico" width={{base:"0.875rem",md:"1.25rem"}} height={{base:"0.875rem",md:"1.25rem"}}/>
+             <Image src={SearchIcon}  width={{base:"0.875rem",md:"1.25rem"}} height={{base:"0.875rem",md:"1.25rem"}} alt="search" className="search-ico" />  
+            {/* <LuSearch className="search-ico" width={{base:"0.875rem",md:"1.25rem"}} height={{base:"0.875rem",md:"1.25rem"}}/> */}
             <Text className="isMobileHide" color={"#000"}>Search</Text>
           </IconButton>
   

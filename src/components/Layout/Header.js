@@ -3,6 +3,7 @@ import { Box, Link, Flex, Text } from '@chakra-ui/react';
 import logo from '@/assets/logo.svg'
 import SearchInput from './components/Search';
 import { useLocation } from 'react-router-dom';
+import "./header.scss"
 
 const Header = () => {
   const location = useLocation();
