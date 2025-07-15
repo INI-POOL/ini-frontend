@@ -1,0 +1,15 @@
+.myinput{
+    border: none;
+    &:focus{
+      border: none !important;
+      outline: none;
+    }
+    &::shadow{
+      border: none;
+      outline: none;
+    }
+    &:hover{
+      border: none !important;
+      outline: none;
+    }
+  }

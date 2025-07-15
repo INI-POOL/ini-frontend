@@ -11,6 +11,7 @@ const option = {
   grid:{
     left:'0.8%',
     right:'0.9%',
+    // top:0,
     top:'1%',
     bottom:'10%',
     containLabel: true  // ✅ 确保标签在 grid 内部
@@ -30,7 +31,7 @@ const option = {
     splitLine:{
       show:false
     },
-    data: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00'],
+    data: ['2.6', '2.7', '2.8', '2.9', '2.10', '2.11'],
     boundaryGap: false,
     axisLabel: {
       color: '#858585',
@@ -77,7 +78,7 @@ const option = {
           }
         ])
       },
-      data: [50, 100, 180, 120, 130, 160],
+      data: [50, 200, 360, 100, 100, 200],
     },
     {
       name: 'Mining Pool',
@@ -103,12 +104,12 @@ const option = {
           }
         ])
       },
-      data: [30, 50, 42, 60, 20, 30],
+      data: [10, 40, 72, 40, 60, 70],
     },
   ],
 };
 
-export default function ChartPanel() {
+export default function DataChartPanel() {
   return (
     // <Box p={6}  borderRadius="md" boxShadow="md" padding={{base:"0.4375rem 0.625rem",md:"0.9375rem"}}>
     <Box p={6} borderRadius="md" boxShadow="md" padding={{base:"0",md:"0"}}>

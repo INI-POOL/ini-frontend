@@ -11,12 +11,13 @@ const option = {
     left:0,
     right:0,
     top:0,
-    bottom:'10%'
+    bottom:'10%',
+    containLabel: true  // ✅ 确保标签在 grid 内部
   },
   tooltip: {},
   xAxis: {
     boundaryGap: false,
-    data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+    data: ['2.3', '2.4', '2.5', '2.6', '2.7', '2.8'],
     axisLabel: {
       color: '#858585',
       fontSize: 12,
