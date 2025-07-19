@@ -29,6 +29,7 @@ const SearchInput = () => {
       endElement={
           <IconButton backgroundColor={'linear-gradient(90deg, #C9BFFF 0%, #AC9DFB 100%)'}  
           className="search-btn" height={{base:"1.5rem",md:"2.5rem"}} 
+          borderRadius={{base: "0.625rem"}}
           width={{base:"1.5rem",md:"7.5rem"}}  onClick={() => navigate('/mining')}>
              <Image src={SearchIcon}  width={{base:"0.875rem",md:"1.25rem"}} height={{base:"0.875rem",md:"1.25rem"}} alt="search" className="search-ico" />  
             {/* <LuSearch className="search-ico" width={{base:"0.875rem",md:"1.25rem"}} height={{base:"0.875rem",md:"1.25rem"}}/> */}

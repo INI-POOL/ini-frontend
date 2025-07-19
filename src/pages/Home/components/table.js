@@ -9,13 +9,13 @@ const DataTable = () => {
       <Table.Root size="sm" stickyHeader variant="unstyled" >
         <Table.Header>
           <Table.Row bg="#060811" py="0.9375rem" style={{ borderBottom: "0.3125rem solid #060811" }}>
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem">
+            <Table.ColumnHeader borderWidth="0px" textAlign="center" paddingBottom="0.9375rem" fontSize="0.875rem">
               <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Luck Value</Text>
             </Table.ColumnHeader>
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Block Height</Text></Table.ColumnHeader>
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Time</Text></Table.ColumnHeader>
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Reward (INI)</Text></Table.ColumnHeader>
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Status</Text></Table.ColumnHeader>
+            <Table.ColumnHeader borderWidth="0px" textAlign="center" paddingBottom="0.9375rem"  fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Block Height</Text></Table.ColumnHeader>
+            <Table.ColumnHeader borderWidth="0px" textAlign="center" paddingBottom="0.9375rem"  fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Time</Text></Table.ColumnHeader>
+            <Table.ColumnHeader borderWidth="0px" textAlign="center" paddingBottom="0.9375rem" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Reward (INI)</Text></Table.ColumnHeader>
+            <Table.ColumnHeader borderWidth="0px" textAlign="center" paddingBottom="0.9375rem" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Status</Text></Table.ColumnHeader>
 
 
           </Table.Row>

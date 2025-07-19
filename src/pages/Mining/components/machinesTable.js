@@ -12,13 +12,13 @@ const DataTable = () => {
       <Table.Root size="sm" stickyHeader variant="unstyled">
         <Table.Header>
           <Table.Row bg="#060811" py="0.9375rem">
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem">
+            <Table.ColumnHeader borderWidth="0px" paddingBottom="0.9375rem"  textAlign="center" fontSize="0.875rem">
               <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Luck Value</Text>
             </Table.ColumnHeader>
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Block Height</Text></Table.ColumnHeader>
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Time</Text></Table.ColumnHeader>
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Reward (INI)</Text></Table.ColumnHeader>
-            <Table.ColumnHeader borderWidth="0px" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Status</Text></Table.ColumnHeader>
+            <Table.ColumnHeader borderWidth="0px" paddingBottom="0.9375rem" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Block Height</Text></Table.ColumnHeader>
+            <Table.ColumnHeader borderWidth="0px" paddingBottom="0.9375rem" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Time</Text></Table.ColumnHeader>
+            <Table.ColumnHeader borderWidth="0px" paddingBottom="0.9375rem" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Reward (INI)</Text></Table.ColumnHeader>
+            <Table.ColumnHeader borderWidth="0px" paddingBottom="0.9375rem" textAlign="center" fontSize="0.875rem"><Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text">Status</Text></Table.ColumnHeader>
 
           </Table.Row>
         </Table.Header>
@@ -26,7 +26,7 @@ const DataTable = () => {
         <Table.Body>
           {items.map((item) => (
             <Table.Row key={item.id} bg="#060811" py="0.9375rem" style={{ borderTop: "0.3125rem solid #060811", background: "rgba(255, 255, 255, 0.02)" }}>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.id}</Table.Cell>
+              <Table.Cell textAlign="center"  borderWidth="0px" fontSize="0.875rem">{item.id}</Table.Cell>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.name}</Table.Cell>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.category}</Table.Cell>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.price}</Table.Cell>

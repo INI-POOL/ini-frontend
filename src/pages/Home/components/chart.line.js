@@ -112,7 +112,7 @@ export default function ChartPanel() {
   return (
     // <Box p={6}  borderRadius="md" boxShadow="md" padding={{base:"0.4375rem 0.625rem",md:"0.9375rem"}}>
     <Box p={6} borderRadius="md" boxShadow="md" padding={{base:"0",md:"0"}}>
-    <ReactECharts option={option} style={{ height: '250px', width: '100%' }} />
+    <ReactECharts option={option} style={{ height: '300px', width: '100%' }} />
     </Box>
   );
 }

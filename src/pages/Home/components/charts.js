@@ -23,6 +23,7 @@ const ChartData = () => {
             </Flex>
             <HStack gap={"0.625rem"}
               mt={{ base: 0, sm: 0 }}
+              alignItems={{ base: "flex-start" }}
               marginRight={{ base: "0rem", sm: "0.625rem" }}
               justify={{ base: "flex-start", sm: "flex-end" }}>
               {/* <Badge fontSize={{ base: "0.75rem" }} color={"#fff"} style={{ borderRadius: "0.3125rem", padding: "0.1875em", background: "#363646" }}>24H</Badge>

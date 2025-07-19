@@ -1,12 +1,25 @@
-import React from 'react';
-import { Box, Badge, Flex, Text, IconButton } from '@chakra-ui/react';
+"use client"
+import React, { useState } from 'react';
+import { Box, Badge, Flex, Text, IconButton, Clipboard, Button } from '@chakra-ui/react';
 import './pool.module.scss';
 import { useNavigate } from 'react-router-dom';
 import tutorial from '@/assets/img/tutorial.svg'
+import { toaster } from "@/components/ui/toaster"
 
 
 const PoolModuleData = () => {
   const navigate = useNavigate();
+  const [hovered, setHovered] = useState(false);
+  const [hovered2, setHovered2] = useState(false);
+  const handleCopy = () => {
+    // alert('Copy successfully')
+    toaster.create({
+      title: `Copy successfully`,
+      type: 'success',
+    })
+  }
+
+
   return (
     <Flex className='poolWapper' height={'100%'} flexDirection={"column"} style={{ textAlign: 'left' }}>
       <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" padding='0.9375rem'>
@@ -64,13 +77,49 @@ const PoolModuleData = () => {
           </IconButton>
         </Flex>
         <Flex gap={"0.625rem"} direction={"column"}>
-        {/* <Badge display="inline-block" >stratum+tcp://inipool.pool.com:28888</Badge> */}
-          <Text className='poolDesc' borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
-            stratum+tcp://inipool.pool.com:28888
-          </Text>
-          <Text display="inline-block" borderRadius={"0.3125rem"} fontSize='0.75rem'  padding={"0.1875rem"} fontWeight='400' background="#252525">
-            stratum+tcp://inipool.pool.com:28889
-          </Text>
+          {/* <Clipboard textToCopy="stratum+tcp://inipool.pool.com:28888">
+            <Text className='poolDesc' onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
+              stratum+tcp://inipool.pool.com:28888
+            </Text>
+          </Clipboard> */}
+
+
+          <Flex
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            onClick={handleCopy} gap={"0.625rem"} direction={"row"} alignItems={"flex-start"}>
+            <Clipboard.Root
+              value="stratum+tcp://inipool.pool.com:28888">
+              <Clipboard.Trigger asChild>
+                <Text className='poolDesc' onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
+                  stratum+tcp://inipool.pool.com:28888
+
+                  {hovered && (
+                    <Clipboard.Indicator display="inline-block" marginLeft={0.125} />
+                  )}
+                </Text>
+              </Clipboard.Trigger>
+            </Clipboard.Root>
+          </Flex>
+          {/* <Badge display="inline-block" >stratum+tcp://inipool.pool.com:28888</Badge> */}
+          <Flex
+            onMouseEnter={() => setHovered2(true)}
+            onMouseLeave={() => setHovered2(false)}
+            onClick={handleCopy} gap={"0.625rem"} direction={"row"} alignItems={"flex-start"}>
+            <Clipboard.Root
+              value="stratum+tcp://inipool.pool.com:28889">
+              <Clipboard.Trigger asChild>
+                <Text className='poolDesc' onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
+                  stratum+tcp://inipool.pool.com:28889
+
+                  {hovered2 && (
+                    <Clipboard.Indicator display="inline-block" marginLeft={0.125} />
+
+                  )}
+                </Text>
+              </Clipboard.Trigger>
+            </Clipboard.Root>
+          </Flex>
         </Flex>
 
       </Flex>

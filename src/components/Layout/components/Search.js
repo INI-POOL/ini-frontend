@@ -15,8 +15,16 @@ const SearchInput = () => {
   return (
     <InputGroup
      padding={0}
-     className="myinput"
+     
      style={{borderRadius:"0.625rem"}}
+     _hover={{
+      border: "1px solid var(--input-border, #3B3B3B)", // 不变色
+      boxShadow: "none"
+    }}
+    _focusWithin={{
+      border: "1px solid var(--input-border, #3B3B3B)", // 保持一致
+      boxShadow: "none"
+    }}
      border="1px solid var(--input-border, #3B3B3B);"
       endElement={
         <IconButton  className="search-btn" onClick={() => navigate('/mining')}>
@@ -27,6 +35,7 @@ const SearchInput = () => {
       <Input
         placeholder="Enter your message"
         value={value}
+        className="myinput"
         border={"none"}
         borderRadius={"0.625rem"}
         onChange={(e) => {

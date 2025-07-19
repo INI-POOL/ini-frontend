@@ -1,8 +1,10 @@
 
-import { Wrap, WrapItem, Box, Flex, Text,Image,Tooltip } from "@chakra-ui/react";
+import { Wrap, WrapItem, Box, Flex, Text,Image} from "@chakra-ui/react";
 import info from "@/assets/img/info.svg" // 请根据你的路径调整
 
 const DataModule = () => {
+
+
     return (
         <Wrap spacing="4" justify="space-between">
             {[

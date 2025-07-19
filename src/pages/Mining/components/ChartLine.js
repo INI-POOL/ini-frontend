@@ -8,15 +8,19 @@ const option = {
     text: '',
   },
   grid:{
-    left:0,
-    right:0,
-    top:0,
+    left:'0.8%',
+    right:'0.9%',
+    // top:0,
+    top:'1%',
     bottom:'10%',
     containLabel: true  // ✅ 确保标签在 grid 内部
   },
   tooltip: {},
   xAxis: {
     boundaryGap: false,
+    axisTick: {
+      show: false,
+    },
     data: ['2.3', '2.4', '2.5', '2.6', '2.7', '2.8'],
     axisLabel: {
       color: '#858585',
