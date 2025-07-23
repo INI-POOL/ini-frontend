@@ -8,9 +8,11 @@ export const userApi = {
   updateUserInfo: (data) => request.put('/user/info', data),
 };
 
-// 其他业务接口
-export const businessApi = {
-  getList: (params) => request.get('/business/list', { params }),
+// 测试接口: 获取矿池统计
+// URL: GET http://localhost:8080/api/v1/pool/stats
+// 矿池业务接口
+export const poolApi = {
+  getPoolStats: (params) => request.get('/pool/stats', { params }),// 获取矿池统计
   getDetail: (id) => request.get(`/business/detail/${id}`),
   create: (data) => request.post('/business/create', data),
   update: (id, data) => request.put(`/business/update/${id}`, data),

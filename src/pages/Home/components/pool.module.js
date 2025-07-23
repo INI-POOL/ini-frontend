@@ -7,7 +7,7 @@ import tutorial from '@/assets/img/tutorial.svg'
 import { toaster } from "@/components/ui/toaster"
 
 
-const PoolModuleData = () => {
+const PoolModuleData = (props) => {
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
   const [hovered2, setHovered2] = useState(false);
@@ -40,7 +40,7 @@ const PoolModuleData = () => {
           Mining Pool Fee Rate
         </Text>
         <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-          100%
+          {props.data.feeRate}%
         </Text>
       </Box>
 
@@ -49,7 +49,8 @@ const PoolModuleData = () => {
           Transfer Time (UTC)
         </Text>
         <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-          7:30 (UTC)
+          {/* 7:30 (UTC) */}
+          {props.data.paymentTime}
         </Text>
       </Box>
 
@@ -58,7 +59,9 @@ const PoolModuleData = () => {
           Minimum Daily Payout
         </Text>
         <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-          0.1 INI
+          {/* 0.1 */}
+          
+          {props.data.minPayValue} INI
         </Text>
       </Box>
 

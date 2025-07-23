@@ -1,14 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Box, Button, Flex, Text, Grid, GridItem, HStack, Badge } from '@chakra-ui/react';
 import logo from '@/assets/logo.svg'
 import PoolModuleData from './pool.module.js';
 import ChartPanel from './chart.line.js';
 import DataChartPanel from './7d.chart.line.js';
 import DataModule from './data.module.js';
+import { poolApi } from '@/services/api';
 
 const ChartData = () => {
   const [selected, setSelected] = useState('24H'); // 默认选中 "24H"
+  const [poolData,setPoolData]= useState([]);
   const options = ['24H', '7Day'];
+  // 调用登录接口
+  const pool_data = async (values) => {
+    try {
+      const response = await poolApi.getPoolStats(values);
+      // console.log(response)
+      console.log(response.data)
+      console.log(response.data.minersCount)
+      if(response.success){
+        setPoolData(response.data)
+      }
+      // console.log(response);
+      // 处理响应数据
+    } catch (error) {
+      // 处理错误
+    }
+  };
+  
+  useEffect(() => {
+    pool_data();
+    // fetch("https://api.example.com/data")  // 替换为你的接口地址
+    //   .then((response) => response.json())
+    //   .then((resData) => {
+    //     setData(resData);
+    //   })
+    //   .catch((error) => {
+    //     console.error("接口请求失败:", error);
+    //   });
+  }, []);
 
   return (
     <Grid templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }} gap="6">
@@ -51,12 +81,12 @@ const ChartData = () => {
           ) : (
             <DataChartPanel />
           )}
-          <DataModule />
+          <DataModule data={poolData}/>
         </Box>
       </GridItem>
       <GridItem colSpan={{ base: 1, md: 1 }} className='commonBg'>
 
-        <PoolModuleData />
+        <PoolModuleData data={poolData}/>
 
       </GridItem>
     </Grid>
