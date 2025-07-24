@@ -60,7 +60,6 @@ const PoolModuleData = (props) => {
         </Text>
         <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
           {/* 0.1 */}
-          
           {props.data.minPayValue} INI
         </Text>
       </Box>
@@ -95,7 +94,8 @@ const PoolModuleData = (props) => {
               value="stratum+tcp://inipool.pool.com:28888">
               <Clipboard.Trigger asChild>
                 <Text className='poolDesc' onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
-                  stratum+tcp://inipool.pool.com:28888
+                  {/* stratum+tcp://inipool.pool.com:28888 */}
+                  {props.data.poolServer}:{props.data.poolPort}
 
                   {hovered && (
                     <Clipboard.Indicator display="inline-block" marginLeft={0.125} />
@@ -105,7 +105,7 @@ const PoolModuleData = (props) => {
             </Clipboard.Root>
           </Flex>
           {/* <Badge display="inline-block" >stratum+tcp://inipool.pool.com:28888</Badge> */}
-          <Flex
+          {/* <Flex
             onMouseEnter={() => setHovered2(true)}
             onMouseLeave={() => setHovered2(false)}
             onClick={handleCopy} gap={"0.625rem"} direction={"row"} alignItems={"flex-start"}>
@@ -122,7 +122,7 @@ const PoolModuleData = (props) => {
                 </Text>
               </Clipboard.Trigger>
             </Clipboard.Root>
-          </Flex>
+          </Flex> */}
         </Flex>
 
       </Flex>
