@@ -13,6 +13,8 @@ export const userApi = {
 // 矿池业务接口
 export const poolApi = {
   getPoolStats: (params) => request.get('/pool/stats', { params }),// 获取矿池统计
+  getPerReward: (params) => request.get('/pool/reward-history', { params }),// 每M收益
+  getBlockReward: (params) => request.get('/pool/recent-blocks', { params }),// 获取奖励历史
   getDetail: (id) => request.get(`/business/detail/${id}`),
   create: (data) => request.post('/business/create', data),
   update: (id, data) => request.put(`/business/update/${id}`, data),

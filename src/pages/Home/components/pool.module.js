@@ -19,7 +19,6 @@ const PoolModuleData = (props) => {
     })
   }
 
-
   return (
     <Flex className='poolWapper' height={'100%'} flexDirection={"column"} style={{ textAlign: 'left' }}>
       <Text bgGradient="linear-gradient(90deg, #CBCDDE 0%, #6E6F78 100%)" bgClip="text" padding='0.9375rem'>

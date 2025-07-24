@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useEffect, useState} from 'react';
 import { Box, Flex, Text } from '@chakra-ui/react';
 // import SearchInput from '@/components/Layout/components/Search.js';
 import SearchInput from './components/Search.js';
@@ -10,19 +10,26 @@ import './home.scss';
 import '../common.scss';
 // import {Charts} from './components/charts';
 
-import { userApi } from '@/services/api';
+import { poolApi } from '@/services/api';
 
 const Home = () => {
-
+  const [rewardList,setRewardList]= useState([]);
   // 调用登录接口
-  const login = async (values) => {
+  const getRewardList = async () => {
     try {
-      const response = await userApi.login(values);
+      const response = await poolApi.getBlockReward();
+      console.log(response.data)
+      if(response.success){
+        setRewardList(response.data)
+      }
       // 处理响应数据
     } catch (error) {
       // 处理错误
     }
   };
+  useEffect(()=>{
+    getRewardList()
+  },[])
   return (
     <Box className='homoPage'>
       <div style={{ marginBottom: '1.56rem' }}>
@@ -39,7 +46,7 @@ const Home = () => {
           </Flex>
           <Box className='table-wapper' gap={{base:"0.625rem"}} padding={{base:"0 0.9375rem"}}>
             <div className='table-content'>
-             <DataTable />
+             <DataTable data={rewardList} />
             </div>
           </Box>
         </Flex>

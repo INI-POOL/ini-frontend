@@ -10,18 +10,37 @@ import { poolApi } from '@/services/api';
 const ChartData = () => {
   const [selected, setSelected] = useState('24H'); // 默认选中 "24H"
   const [poolData,setPoolData]= useState([]);
-  const options = ['24H', '7Day'];
-  // 调用登录接口
+  const [poolRewardX,setPoolRewardX]= useState([]);
+  const [poolRewardData,setPoolRewardData]= useState([]);
+  // const options = ['24H', '7Day'];
+  const options = []
+  // 调用矿池基本数据接口
   const pool_data = async (values) => {
     try {
       const response = await poolApi.getPoolStats(values);
-      // console.log(response)
-      console.log(response.data)
-      console.log(response.data.minersCount)
       if(response.success){
         setPoolData(response.data)
       }
-      // console.log(response);
+      // 处理响应数据
+    } catch (error) {
+      // 处理错误
+    }
+  };
+  // 调用图表接口
+  const pool_chart_data = async (values) => {
+    try {
+      const response = await poolApi.getPerReward(values);
+      if(response.success){
+        let x_data=[];
+        let y_data=[];
+        response.data.forEach(element => {
+          x_data.push(element.recordedAt)
+          y_data.push(element.rewardPerMhash)
+        });
+        setPoolRewardX(x_data)
+        setPoolRewardData(y_data)
+        // setPoolRewardData(response.data)
+      }
       // 处理响应数据
     } catch (error) {
       // 处理错误
@@ -30,14 +49,7 @@ const ChartData = () => {
   
   useEffect(() => {
     pool_data();
-    // fetch("https://api.example.com/data")  // 替换为你的接口地址
-    //   .then((response) => response.json())
-    //   .then((resData) => {
-    //     setData(resData);
-    //   })
-    //   .catch((error) => {
-    //     console.error("接口请求失败:", error);
-    //   });
+    pool_chart_data();
   }, []);
 
   return (
@@ -47,9 +59,10 @@ const ChartData = () => {
           <Flex direction={{ base: "row", sm: "row" }} gap="4" justify="space-between">
             <Flex gap={{ base: '0.5rem' }} direction={{ base: 'column' }} fontSize={{ base: "0.75rem", sm: "0.875rem" }}>
               <Text className='chartTitle'>
-                Mining Pool Hashrate
+                {/* Mining Pool Hashrate */}
+                Real-time Earnings
               </Text>
-              <Text style={{ color: "#FFF" }} fontSize={{ base: "1.5rem", sm: "1.875rem" }} fontWeight={700}>182.01 G</Text>
+              {/* <Text style={{ color: "#FFF" }} fontSize={{ base: "1.5rem", sm: "1.875rem" }} fontWeight={700}>182.01 G</Text> */}
             </Flex>
             <HStack gap={"0.625rem"}
               mt={{ base: 0, sm: 0 }}
@@ -77,7 +90,7 @@ const ChartData = () => {
             </HStack>
           </Flex>
           {selected === '24H' ? (
-            <ChartPanel />
+            <ChartPanel x_data={poolRewardX} y_data={poolRewardData}/>
           ) : (
             <DataChartPanel />
           )}
