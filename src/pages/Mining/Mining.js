@@ -16,10 +16,11 @@ const Mining = () => {
     const { walletAddress } = useParams();
     const [minerHashrate,setMinersHashrate]= useState([]);
     const [minerHashrateTime,setMinersHashrateTime]= useState([]);
+    const [baseinfo,setBaseinfo]= useState({});
     const [machines,setMachines]= useState([]);
     const [onlineMachines,setOnlineMachines]= useState([]);
     const [offlineMachines,setOfflineMachines]= useState([]);
-    const [reward,setReward]= useState([]);
+    const [reward,setReward]= useState({});
     const [totalCount,setTotalCount]=useState(0); // 总机器数
     const [aliveCount,setAliveCount]=useState(0); // 在线机器数
     // 调用登录接口
@@ -28,6 +29,7 @@ const Mining = () => {
             const response = await poolApi.getMinersHashrate(walletAddress);
             // console.log(response.data.hash_history)
             if (response.success) {
+                setBaseinfo(response.data)
                 // console.log(response.data.machine_alive)
                 // console.log(response.data.machine_count)
                 setAliveCount(response.data.machine_alive);
@@ -80,6 +82,215 @@ const Mining = () => {
             // 处理响应数据
         } catch (error) {
             // 处理错误
+            let retdata={
+                "success": true,
+                "data": {
+                  "address": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+                  "total_reward": "0.12345678",
+                  "pay_details": [
+                    {
+                      "date": 1704067200,
+                      "amount": "0.04567890",
+                      "tx_hash": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+                      "pay_time": 1704067200
+                    },
+                    {
+                      "date": 1703980800,
+                      "amount": "0.03215678",
+                      "tx_hash": "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+                      "pay_time": 1703980800
+                    },
+                    {
+                      "date": 1703894400,
+                      "amount": "0.02890123",
+                      "tx_hash": "0x567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234",
+                      "pay_time": 1703894400
+                    },
+                    {
+                      "date": 1703808000,
+                      "amount": "0.01671987",
+                      "tx_hash": "0xdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abc",
+                      "pay_time": 1703808000
+                    },
+                    {
+                      "date": 1703721600,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1703635200,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1703548800,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1703462400,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1703376000,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1703289600,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1703203200,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1703116800,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1703030400,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702944000,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702857600,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702771200,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702684800,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702598400,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702512000,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702425600,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702339200,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702252800,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702166400,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1702080000,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1701993600,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1701907200,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1701820800,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1701734400,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1701648000,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1701561600,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1701475200,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1701388800,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    },
+                    {
+                      "date": 1701302400,
+                      "amount": "0.00000000",
+                      "tx_hash": "",
+                      "pay_time": 0
+                    }
+                ]
+            }
+            }
+            console.log(retdata.data.pay_details)
+            setReward(retdata.data)
         }
     };
     
@@ -101,10 +312,9 @@ const Mining = () => {
             p={8}
             position="relative"
             className='mining'
-
         >
             <div>
-                <BaseInfo walletaddress={walletAddress} machinesinfo={machines}/>
+                <BaseInfo walletaddress={walletAddress} reward={reward} machinesinfo={baseinfo}/>
             </div>
             <Box style={{ marginBottom: '1.56rem' }} marginTop={{ base: "1.25rem", sm: "3.75rem" }} className='chart-wapper'>
                 <Text fontSize={{ base: '0.75rem', sm: '0.875rem' }}>24H  Hashrate</Text>
@@ -118,13 +328,7 @@ const Mining = () => {
                         <Text style={{ textAlign: 'left' }}>
                             Mining Machine
                         </Text>
-
                         <Stack direction="row" spacing={'0.625rem'} className='filter'>
-                            {/* <Badge className='check' onClick={()=>{
-                                console.log(1)
-                            }}>All (295)</Badge>
-                            <Badge className='uncheck' >Online (283)</Badge>
-                            <Badge className='uncheck red'>Offline (12)</Badge> */}
                             {options.map((option) => (
                                 <Badge
                                     key={option.key}
@@ -160,7 +364,7 @@ const Mining = () => {
                     </Flex>
                     <Box className='table-wapper' gap={{ base: "0.625rem" }} padding={{ base: "0 0.9375rem" }}>
                         <div className='table-content'>
-                            <DataTable />
+                            <DataTable reward={reward}/>
                         </div>
                     </Box>
                 </Flex>

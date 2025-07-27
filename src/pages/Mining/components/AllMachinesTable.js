@@ -22,27 +22,16 @@ const AllMachinesTable = ({ machines }) => {
           {machines.map((item) => (
             <Table.Row key={item.id} bg="#060811" py="0.9375rem" style={{ borderTop: "0.3125rem solid #060811", background: "rgba(255, 255, 255, 0.02)" }}>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.machine_name}</Table.Cell>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.hashrate}</Table.Cell>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.stale_rate}</Table.Cell>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.invalid_rate}</Table.Cell>
+              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.hashrate??"-"}</Table.Cell>
+              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.stale_rate??"-"}</Table.Cell>
+              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.invalid_rate??"-"}</Table.Cell>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{formatDate(item.last_submit_time, "Y-M-D H:i:s")}</Table.Cell>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">
                 <Text as="span" color={item.is_offline === false ? "green" : "red"}>{!item.is_offline? "Online" : "Offline"}</Text>
               </Table.Cell>
             </Table.Row>
           ))}
-          {/* {items.map((item) => (
-          <Table.Row key={item.id} bg="#060811" py="0.9375rem" style={{borderTop:"0.3125rem solid #060811",background: "rgba(255, 255, 255, 0.02)"}}>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.title}</Table.Cell>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.id}</Table.Cell>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.name}</Table.Cell>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.category}</Table.Cell>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.price}</Table.Cell>
-              <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">
-                <Text as="span" color={item.status === "Success" ? "green" : "red"}>{item.status}</Text>
-              </Table.Cell>
-          </Table.Row>
-        ))} */}
+      
         </Table.Body>
       </Table.Root>
     </Table.ScrollArea>
