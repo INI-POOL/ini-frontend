@@ -15,8 +15,10 @@ export const poolApi = {
   getPoolStats: (params) => request.get('/pool/stats', { params }),// 获取矿池统计
   getPerReward: (params) => request.get('/pool/reward-history', { params }),// 每M收益
   getBlockReward: (params) => request.get('/pool/recent-blocks', { params }),// 获取奖励历史
-  getDetail: (id) => request.get(`/business/detail/${id}`),
-  create: (data) => request.post('/business/create', data),
-  update: (id, data) => request.put(`/business/update/${id}`, data),
-  delete: (id) => request.delete(`/business/delete/${id}`),
+  getMinersHashrate: (walletAddress) => request.get(`/miners/${walletAddress}/info`),// 获取详情
+  getMinersMachine: (walletAddress) => request.get(`/miners/${walletAddress}/machines`),// 获取详情
+  getMinersReward: (walletAddress) => request.get(`/miners/${walletAddress}/reward`),// 获取详情
+  // create: (data) => request.post('/business/create', data),
+  // update: (id, data) => request.put(`/business/update/${id}`, data),
+  // delete: (id) => request.delete(`/business/delete/${id}`),
 };

@@ -5,7 +5,7 @@ import Paid from "@/assets/img/paid.svg"
 import Unpaid from "@/assets/img/unpaid.svg"
 
 
-const DataTable = () => {
+const DataTable = ({machines}) => {
   return (
 
     <Table.ScrollArea borderWidth="0px" rounded="md" height="300px" className="table-scroll-container">

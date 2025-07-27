@@ -7,7 +7,7 @@ import wallet from '@/assets/img/wallet.svg';
 
 import { Box, Input, InputGroup, InputLeftElement, Flex, VStack, Text, Button } from '@chakra-ui/react';
 
-const BaseInfo = () => {
+const BaseInfo = ({walletaddress,machinesinfo}) => {
     return (
         <div className="baseinfo " textAlign="left">
             <Flex textAlign="left">
@@ -17,7 +17,7 @@ const BaseInfo = () => {
                         <img src={wallet} />
                     </IconButton>
                     </Text>
-                    <Text className='value' fontSize={["0.875rem","1.25rem"]}>0x845550c855fa64c0f4239ca474f8bb5a125e428b</Text>
+                    <Text className='value' fontSize={["0.875rem","1.25rem"]}>{walletaddress}</Text>
                 </Flex>
             </Flex>
             <div textAlign="left" style={{width:"100%"}}>

@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/mining',
+        path: '/mining/:walletAddress',
         element: <Mining />
       },
     
