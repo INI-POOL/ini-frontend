@@ -13,6 +13,7 @@ export const formatDate = (timestamp: number,ret:String) => {
   };
 
   export const  formatLargeNumber=(value:number)=> {
+    if (typeof value !== 'number' || isNaN(value)) return '-';
     const units = ['', 'K', 'M', 'G', 'T', 'P'];
     let index = 0;
   
