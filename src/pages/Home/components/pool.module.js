@@ -30,7 +30,8 @@ const PoolModuleData = (props) => {
           Settlement Mode
         </Text>
         <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-          PPS+/PPLNS
+          {/* PPS+/ */}
+          PPLNS
         </Text>
       </Box>
 

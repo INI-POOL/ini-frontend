@@ -43,16 +43,16 @@ const ChartPanel = ({ x_data, y_data }) => {
         color: '#858585',
         fontSize: 10,
         formatter: function (value) {
-          return dayjs(Number(value)).format("HH:mm");
+          return dayjs(Number(value)*1000).format("HH:mm");
         },
       },
     },
     tooltip: {
       trigger: "axis",
       formatter: function (params) {
-        const time = dayjs(Number(params[0].name)).format("YYYY-MM-DD HH:mm:ss");
+        const time = dayjs(Number(params[0].name)*1000).format("YYYY-MM-DD HH:mm:ss");
         const value = params[0].value;
-        return `${time}<br/>数值：${value}`;
+        return `${time}<br/>data：${value}`;
       },
     },
     yAxis: {
@@ -68,6 +68,12 @@ const ChartPanel = ({ x_data, y_data }) => {
         show:false,
         color: '#858585',
         fontSize: 10,
+        formatter: function (value) {
+          if (value >= 1e9) return (value / 1e9).toFixed(2) + 'G';
+          if (value >= 1e6) return (value / 1e6).toFixed(2) + 'M';
+          if (value >= 1e3) return (value / 1e3).toFixed(2) + 'K';
+          return value;
+        }
       }
     },
     series: [

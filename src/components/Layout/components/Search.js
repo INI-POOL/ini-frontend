@@ -7,7 +7,7 @@ import { IconButton } from "@chakra-ui/react"
 import SearchIcon from "@/assets/img/search.svg"
 
 
-const MAX_CHARACTERS = 20
+const MAX_CHARACTERS = 250
 
 const SearchInput = () => {
   const [value, setValue] = useState("")
@@ -27,7 +27,13 @@ const SearchInput = () => {
     }}
      border="1px solid var(--input-border, #3B3B3B);"
       endElement={
-        <IconButton  className="search-btn" onClick={() => navigate('/mining')}>
+        <IconButton  className="search-btn"  onClick={() => {
+          if(value==""){
+            alert("please input your wallet address")
+            return 
+          }
+          navigate('/mining/'+value)
+          }}>
           <img src={SearchIcon} alt="search" className="search-ico" />  
         </IconButton>
       }
@@ -38,6 +44,7 @@ const SearchInput = () => {
         className="myinput"
         border={"none"}
         borderRadius={"0.625rem"}
+        
         onChange={(e) => {
           setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))
         }}

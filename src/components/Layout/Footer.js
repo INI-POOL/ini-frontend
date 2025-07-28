@@ -16,9 +16,9 @@ const Footer = () => {
         Powered by INIPool Mining. Your trusted platform for secure, profitable cryptocurrency mining. Start earning today.
         </text>
         <Flex align="center" justify="center">
-          <img src={x} alt="" />
+          {/* <img src={x} alt="" />
           <img src={discord} alt="" />
-          <img src={github} alt="" />
+          <img src={github} alt="" /> */}
           <img src={telegram} alt="" />
         </Flex>
       </Flex>

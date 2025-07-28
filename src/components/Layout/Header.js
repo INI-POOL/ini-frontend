@@ -9,7 +9,7 @@ const Header = () => {
   const location = useLocation();
   // 判断是否为首页
   const isHomePage = location.pathname === '/';
-  console.log("isHomePage", isHomePage);
+  // console.log("isHomePage", isHomePage);
 
   return (
     <Box as="header" py={4} boxShadow="sm" minheight={["5rem"]} bg="black">
