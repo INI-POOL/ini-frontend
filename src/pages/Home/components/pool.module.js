@@ -93,7 +93,7 @@ const PoolModuleData = (props) => {
             <Clipboard.Root
               value="stratum+tcp://inipool.pool.com:28888">
               <Clipboard.Trigger asChild>
-                <Text className='poolDesc' onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
+                <Text className='poolDesc' onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem 0.5rem"} fontWeight='400' background="#252525">
                   {/* stratum+tcp://inipool.pool.com:28888 */}
                   {props.data.poolServer}:{props.data.poolPort}
 

@@ -14,7 +14,7 @@ const SearchInput = () => {
   const navigate = useNavigate();
   return (
     <InputGroup
-     padding={"0.625rem 0.625rem 0.625rem 1.25rem"}
+     padding={"0.625rem 0.625rem 0.625rem 0rem"}
      border="1px solid var(--input-border, #3B3B3B);"
      height={{base:"2.5rem",md:"3.75rem"}}
      _hover={{
