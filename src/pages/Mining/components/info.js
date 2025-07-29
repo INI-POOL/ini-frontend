@@ -7,7 +7,8 @@ import wallet from '@/assets/img/wallet.svg';
 
 import { Box, Input, InputGroup, InputLeftElement, Flex, VStack, Text, Button } from '@chakra-ui/react';
 
-const BaseInfo = ({walletaddress,reward,machinesinfo}) => {
+const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
+
     return (
         <div className="baseinfo " textAlign="left">
             <Flex textAlign="left">
@@ -26,22 +27,29 @@ const BaseInfo = ({walletaddress,reward,machinesinfo}) => {
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>Total Reward(INI)</Text>
-                            <Text className='basevalue'>{reward.total_reward}</Text>
+                            <Text className='basevalue'>{reward?.total_reward}</Text>
                         </VStack>
                     </GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
-                            <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>Total hashrate</Text>
-                            <Text className='basevalue'>{machinesinfo.total_hashrate}</Text>
+                            <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>Pending Balance(INI)</Text>
+                            <Text className='basevalue'>{machinesinfo?.pending_balance}</Text>
                         </VStack>
                     </GridItem>
-                    <GridItem><VStack className='baseItem'>
-                        <Text className='baseTitle'>valid Share</Text>
-                        <Text className='basevalue'>{machinesinfo.valid_shares}</Text>
-                    </VStack>
+                    <GridItem>
+                        <VStack className='baseItem'>
+                            <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>One Day (INI)</Text>
+                            <Text className='basevalue'>{baseBasic?.firstDayReward}</Text>
+                        </VStack>
+                    </GridItem>
+                    <GridItem>
+                        <VStack className='baseItem'>
+                            <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>One Week (INI)</Text>
+                            <Text className='basevalue'>{baseBasic?.weekDayReward}</Text>
+                        </VStack>
                     </GridItem>
 
-                    <GridItem>
+                    {/* <GridItem>
                         <VStack className='baseItem'>
                         <Text className='baseTitle'>Invalid Shares</Text>
                         <Text className='basevalue'>{machinesinfo.invalid_shares}</Text>
@@ -57,22 +65,22 @@ const BaseInfo = ({walletaddress,reward,machinesinfo}) => {
                         <VStack className='baseItem'>
                             <Text className='baseTitle'>Pending Balance</Text>
                             <Text className='basevalue'>{machinesinfo.pending_balance}</Text>
-                        </VStack></GridItem>
-                    {/* <GridItem>
+                        </VStack></GridItem> */}
+                    <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle'>Real-time Hashrate</Text>
-                            <Text className='basevalue'>9154.001152</Text>
+                            <Text className='basevalue'>{machinesinfo.total_hashrate}</Text>
                         </VStack></GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle'>Average Daily Hashrate</Text>
-                            <Text className='basevalue'>9154.001152</Text>
+                            <Text className='basevalue'>--</Text>
                         </VStack></GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle'>Mining Machines</Text>
-                            <Text className='basevalue'>9154.001152</Text>
-                        </VStack></GridItem> */}
+                            <Text className='basevalue'>{machinesinfo.machine_count}</Text>
+                        </VStack></GridItem>
                 </Grid>
             </div>
         </div>

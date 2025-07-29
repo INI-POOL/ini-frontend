@@ -1,5 +1,5 @@
 import React ,{useEffect, useState} from 'react';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text, Dialog } from '@chakra-ui/react';
 // import SearchInput from '@/components/Layout/components/Search.js';
 import SearchInput from './components/Search.js';
 import DataTable from './components/table.js';

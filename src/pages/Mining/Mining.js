@@ -21,6 +21,7 @@ const Mining = () => {
     const [onlineMachines,setOnlineMachines]= useState([]);
     const [offlineMachines,setOfflineMachines]= useState([]);
     const [reward,setReward]= useState({});
+    const [baseBasic,setBaseBasic]= useState({});
     const [totalCount,setTotalCount]=useState(0); // 总机器数
     const [aliveCount,setAliveCount]=useState(0); // 在线机器数
     // 调用登录接口
@@ -78,6 +79,15 @@ const Mining = () => {
             // console.log(response.data.hash_history)
             if (response.success) {
                 setReward(response.data)
+                let firstDayReward = response.data.pay_details.length > 0 ? Number(response.data.pay_details[0].amount) : 0;
+                let weekDayReward = response.data?.pay_details?.slice(0, 7).reduce((total, item) => {
+                  return total + Number(item.amount); // 确保是数字
+                }, 0);
+                setBaseBasic({
+                  ...baseBasic,
+                  "firstDayReward":firstDayReward,
+                  "weekDayReward":weekDayReward
+                })
             }
             // 处理响应数据
         } catch (error) {
@@ -314,7 +324,7 @@ const Mining = () => {
             className='mining'
         >
             <div>
-                <BaseInfo walletaddress={walletAddress} reward={reward} machinesinfo={baseinfo}/>
+                <BaseInfo walletaddress={walletAddress} baseBasic={baseBasic} reward={reward} machinesinfo={baseinfo}/>
             </div>
             <Box style={{ marginBottom: '1.56rem' }} marginTop={{ base: "1.25rem", sm: "3.75rem" }} className='chart-wapper'>
                 <Text fontSize={{ base: '0.75rem', sm: '0.875rem' }}>24H  Hashrate</Text>

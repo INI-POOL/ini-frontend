@@ -15,14 +15,15 @@ const SearchInput = () => {
   return (
     <InputGroup
      padding={"0.625rem 0.625rem 0.625rem 0rem"}
-     border="1px solid var(--input-border, #3B3B3B);"
+     className="search-box"
+    //  border="1px solid var(--input-border, #3B3B3B);"
      height={{base:"2.5rem",md:"3.75rem"}}
      _hover={{
-      border: "1px solid var(--input-border, #3B3B3B)", // 不变色
+      // border: "1px solid var(--input-border, #3B3B3B)", // 不变色
       boxShadow: "none"
     }}
     _focusWithin={{
-      border: "1px solid var(--input-border, #3B3B3B)", // 保持一致
+      // border: "1px solid var(--input-border, #3B3B3B)", // 保持一致
       boxShadow: "none"
     }}
      borderRadius={{base: "0.625rem",md:"0.9375rem"}}
@@ -44,7 +45,7 @@ const SearchInput = () => {
       }
     >
       <Input
-        placeholder="Please enter the miner's address to search for the miner."
+        placeholder="Please enter address"
         value={value}
         className="myinput"
         padding={"0.625rem 0.625rem 0.625rem 1.25rem"}

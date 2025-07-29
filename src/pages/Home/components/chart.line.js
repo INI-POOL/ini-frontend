@@ -49,10 +49,18 @@ const ChartPanel = ({ x_data, y_data }) => {
     },
     tooltip: {
       trigger: "axis",
+      backgroundColor: '#24252b', // 设置背景颜色，可使用 rgba 透明色
+      borderColor: '#24252b', 
+      textStyle: {
+        color: '#CBCDDE', // #fff 👈 更亮的文字颜色
+        fontSize: 10
+      },                 // 边框颜色
+      borderWidth: 0.5,    // 边框宽度
+      extraCssText: 'text-align: left;', // 👈 关键设置
       formatter: function (params) {
         const time = dayjs(Number(params[0].name)*1000).format("YYYY-MM-DD HH:mm:ss");
         const value = params[0].value;
-        return `${time}<br/>data：${value}`;
+        return `${time}<br>${value}`;
       },
     },
     yAxis: {

@@ -14,18 +14,19 @@ const SearchInput = () => {
   const navigate = useNavigate();
   return (
     <InputGroup
-     padding={0}
      
+     padding={0}
      style={{borderRadius:"0.625rem"}}
      _hover={{
-      border: "1px solid var(--input-border, #3B3B3B)", // 不变色
+      // border: "1px solid var(--input-border, #3B3B3B)", // 不变色
       boxShadow: "none"
     }}
     _focusWithin={{
       border: "1px solid var(--input-border, #3B3B3B)", // 保持一致
       boxShadow: "none"
     }}
-     border="1px solid var(--input-border, #3B3B3B);"
+    className="search-box"
+    //  border="1px solid var(--input-border, #3B3B3B);"
       endElement={
         <IconButton  className="search-btn"  onClick={() => {
           if(value==""){
@@ -39,7 +40,7 @@ const SearchInput = () => {
       }
     >
       <Input
-        placeholder="Enter your message"
+        placeholder="Please enter address"
         value={value}
         className="myinput"
         border={"none"}
