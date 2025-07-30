@@ -15,7 +15,7 @@ export default function ChartPanel({ x_data, y_data }) {
       left:'0.8%',
       right:'0.9%',
       // top:0,
-      top:'1%',
+      top:'5%',
       bottom:'10%',
       containLabel: true  // ✅ 确保标签在 grid 内部
     },

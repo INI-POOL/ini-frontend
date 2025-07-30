@@ -10,13 +10,20 @@ import { toaster } from "@/components/ui/toaster"
 const PoolModuleData = (props) => {
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
-  const [hovered2, setHovered2] = useState(false);
+  // const [hovered2, setHovered2] = useState(false);
   const handleCopy = () => {
+    
     // alert('Copy successfully')
+    // toaster.create({
+    //   title: `Copy successfully`,
+    //   type: 'success',
+    // })
     toaster.create({
-      title: `Copy successfully`,
+      title: 'Copy completed',
       type: 'success',
-    })
+    });
+    // console.log("Copy completed")
+
   }
 
   return (
@@ -89,18 +96,19 @@ const PoolModuleData = (props) => {
           <Flex
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            onClick={handleCopy} gap={"0.625rem"} direction={"row"} alignItems={"flex-start"}>
+            gap={"0.625rem"} direction={"row"} alignItems={"flex-start"}>
             <Clipboard.Root
+             onClick={handleCopy}
               value="stratum+tcp://inipool.pool.com:28888">
               <Clipboard.Trigger asChild>
-                <Text className='poolDesc' onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem 0.5rem"} fontWeight='400' background="#252525">
+                <Flex className='poolDesc'  cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem 0.5rem"} fontWeight='400' background="#252525">
                   {/* stratum+tcp://inipool.pool.com:28888 */}
                   {props.data.poolServer}:{props.data.poolPort}
 
                   {hovered && (
                     <Clipboard.Indicator display="inline-block" marginLeft={0.125} />
                   )}
-                </Text>
+                </Flex>
               </Clipboard.Trigger>
             </Clipboard.Root>
           </Flex>

@@ -60,7 +60,7 @@ const ChartPanel = ({ x_data, y_data }) => {
       formatter: function (params) {
         const time = dayjs(Number(params[0].name)*1000).format("YYYY-MM-DD HH:mm:ss");
         const value = params[0].value;
-        return `${time}<br>${value}`;
+        return `${time}<br>${value} INI`;
       },
     },
     yAxis: {
@@ -95,7 +95,7 @@ const ChartPanel = ({ x_data, y_data }) => {
         },
         smooth: true,
         // symbol: 'none',        // ❗️隐藏数据点圆圈
-  
+        // animation: false,   // 禁用动画，防止视觉先后差异
         areaStyle: {
           // 顶部到底部渐变
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -139,6 +139,7 @@ const ChartPanel = ({ x_data, y_data }) => {
       // },
     ],
   };
+  
   return (
     // <Box p={6}  borderRadius="md" boxShadow="md" padding={{base:"0.4375rem 0.625rem",md:"0.9375rem"}}>
     <Box p={6} borderRadius="md" boxShadow="md" padding={{base:"0",md:"0"}}>

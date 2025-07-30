@@ -13,9 +13,9 @@ const DataTable = ({reward}) => {
   const handleCopy = () => {
     // alert('Copy successfully')
     toaster.create({
-      title: `Copy successfully`,
+      title: 'Copy completed',
       type: 'success',
-    })
+    });
   }
   return (
 
@@ -46,7 +46,7 @@ const DataTable = ({reward}) => {
             <Clipboard.Root
               value={item.tx_hash}>
               <Clipboard.Trigger asChild>
-                <Text onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"}  padding={"0.1875rem 0.5rem"} fontWeight='400' >
+                <Text cursor={'pointer'} borderRadius={"0.3125rem"}  padding={"0.1875rem 0.5rem"} fontWeight='400' >
                   {formatWalletAddress(item.tx_hash,5,16)}
                   {hovered && (
                     <Clipboard.Indicator display="inline-block" marginLeft={0.125} />

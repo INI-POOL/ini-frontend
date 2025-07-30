@@ -299,7 +299,7 @@ const Mining = () => {
                 ]
             }
             }
-            console.log(retdata.data.pay_details)
+            // console.log(retdata.data.pay_details)
             setReward(retdata.data)
         }
     };
