@@ -29,12 +29,12 @@ const SearchInput = () => {
     //  border="1px solid var(--input-border, #3B3B3B);"
       endElement={
         <IconButton  className="search-btn"  onClick={() => {
-          if(value==""){
-            alert("please input your wallet address")
-            return 
+          if (value == "" || value.startsWith("ox")) {
+            setIsOpen(true)
+            return
           }
-          navigate('/mining/'+value)
-          }}>
+          navigate('/mining/' + value)
+        }}>
           <img src={SearchIcon} alt="search" className="search-ico" />  
         </IconButton>
       }
@@ -51,11 +51,11 @@ const SearchInput = () => {
           setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))
         }}
       />
-         <Dialog.Root key={"myHeaderDialog"} open={isOpen} onOpenChange={setIsOpen}>
+         <Dialog.Root key={"myHeaderDialog"} open={isOpen} onOpenChange={setIsOpen} zIndex={1500}>
           {/* <Dialog.Trigger />
         <Dialog.Backdrop /> */}
           <Dialog.Positioner>
-            <Dialog.Content style={{backgroundColor:'#24252b'}}>
+            <Dialog.Content style={{backgroundColor:'#24252b'}} zIndex={1500}>
               <Dialog.CloseTrigger>
                 <CloseButton size="sm" onClick={() => setIsOpen(false)} style={{color:'#eee'}} _hover={{background:'none'}}/>
               </Dialog.CloseTrigger>
