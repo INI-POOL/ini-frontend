@@ -1,8 +1,8 @@
 
-import { Button, Input, InputGroup, Dialog } from "@chakra-ui/react"
+import { Button, Input, InputGroup, Dialog, Flex } from "@chakra-ui/react"
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
-import { IconButton } from "@chakra-ui/react"
+import { IconButton,CloseButton } from "@chakra-ui/react"
 // import { LuSearch } from "react-icons/lu"
 import SearchIcon from "@/assets/img/search.svg"
 
@@ -11,6 +11,7 @@ const MAX_CHARACTERS = 250
 
 const SearchInput = () => {
   const [value, setValue] = useState("")
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   return (
     <InputGroup
@@ -38,6 +39,7 @@ const SearchInput = () => {
         </IconButton>
       }
     >
+      <Flex>
       <Input
         placeholder="Please enter address"
         value={value}
@@ -49,6 +51,27 @@ const SearchInput = () => {
           setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))
         }}
       />
+         <Dialog.Root key={"myHeaderDialog"} open={isOpen} onOpenChange={setIsOpen}>
+          {/* <Dialog.Trigger />
+        <Dialog.Backdrop /> */}
+          <Dialog.Positioner>
+            <Dialog.Content style={{backgroundColor:'#24252b'}}>
+              <Dialog.CloseTrigger>
+                <CloseButton size="sm" onClick={() => setIsOpen(false)} style={{color:'#eee'}} _hover={{background:'none'}}/>
+              </Dialog.CloseTrigger>
+              <Dialog.Header>
+                <Dialog.Title >prompt</Dialog.Title>
+              </Dialog.Header>
+              <Dialog.Body >
+                Invalid address
+              </Dialog.Body>
+              <Dialog.Footer />
+
+            </Dialog.Content>
+          </Dialog.Positioner>
+        </Dialog.Root>
+      </Flex>
+     
     </InputGroup>
   )
 }
