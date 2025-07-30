@@ -60,7 +60,7 @@ const ChartData = () => {
             <Flex gap={{ base: '0.5rem' }} direction={{ base: 'column' }} fontSize={{ base: "0.75rem", sm: "0.875rem" }}>
               <Text className='chartTitle'>
                 {/* Mining Pool Hashrate */}
-                Real-time Earnings
+                Real-time Eamings (Per 1MH/s)
               </Text>
               {/* <Text style={{ color: "#FFF" }} fontSize={{ base: "1.5rem", sm: "1.875rem" }} fontWeight={700}>182.01 G</Text> */}
             </Flex>

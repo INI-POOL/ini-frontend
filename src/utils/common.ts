@@ -24,4 +24,9 @@ export const formatDate = (timestamp: number,ret:String) => {
   
     return value.toFixed(2).replace(/\.00$/, '') + units[index];
   }
+
+  export const formatWalletAddress=(address:string, prefixLength = 6, suffixLength = 4) =>{
+    if (!address || address.length <= prefixLength + suffixLength) return address;
+    return `${address.slice(0, prefixLength)}...${address.slice(-suffixLength)}`;
+  }
   

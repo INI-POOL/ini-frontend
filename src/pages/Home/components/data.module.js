@@ -4,9 +4,9 @@ import info from "@/assets/img/info.svg" // 请根据你的路径调整
 
 const DataModule = (props) => {
     let poolData=[
-        {title:"Total Hashrate",value:props.data.poolHashRate_15m},
+        {title:"Mining Machines",value:props.data.workersCount},
         {title:"Miners",value:props.data.minersCount},
-        {title:"Expected Earnings (1MH/s)",value:props.data.rewardPerMhash},
+        {title:"Expected Earnings (1MH/s)",value:props.data.rewardPerMhash+" INI"},
         {title:"Number of Blocks Mined (24H)",value:props.data.blockCount_24h}
     ]
 
