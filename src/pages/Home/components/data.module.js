@@ -11,7 +11,7 @@ const DataModule = (props) => {
     ]
 
     return (
-        <Wrap spacing="4" justify="space-between">
+        <Wrap spacing="0.625rem" justify="space-between">
             {poolData.map((item, index) => (
                 <WrapItem
                     key={index}

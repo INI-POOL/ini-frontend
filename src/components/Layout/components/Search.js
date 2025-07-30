@@ -1,5 +1,5 @@
 
-import { Button, Input, InputGroup, Span } from "@chakra-ui/react"
+import { Button, Input, InputGroup, Dialog } from "@chakra-ui/react"
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import { IconButton } from "@chakra-ui/react"
@@ -14,7 +14,6 @@ const SearchInput = () => {
   const navigate = useNavigate();
   return (
     <InputGroup
-     
      padding={0}
      style={{borderRadius:"0.625rem"}}
      _hover={{
@@ -22,7 +21,7 @@ const SearchInput = () => {
       boxShadow: "none"
     }}
     _focusWithin={{
-      border: "1px solid var(--input-border, #3B3B3B)", // 保持一致
+      // border: "1px solid var(--input-border, #3B3B3B)", // 保持一致
       boxShadow: "none"
     }}
     className="search-box"
