@@ -4,8 +4,6 @@ import { Box, Heading, Show } from '@chakra-ui/react';
 import * as echarts from 'echarts';
 import dayjs from "dayjs"; // 推荐使用 dayjs，轻量好用
 
-
-
 export default function ChartPanel({ x_data, y_data }) {
   const option = {
     title: {

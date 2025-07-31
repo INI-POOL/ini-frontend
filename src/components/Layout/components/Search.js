@@ -1,18 +1,27 @@
 
-import { Button, Input, InputGroup, Dialog, Flex } from "@chakra-ui/react"
+import {  Input, InputGroup, Flex } from "@chakra-ui/react"
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
-import { IconButton,CloseButton } from "@chakra-ui/react"
+import { IconButton } from "@chakra-ui/react"
 // import { LuSearch } from "react-icons/lu"
 import SearchIcon from "@/assets/img/search.svg"
-
+import { useGlobalDialog } from "@/components/ui/GlobalDialogProvider";
 
 const MAX_CHARACTERS = 250
 
 const SearchInput = () => {
   const [value, setValue] = useState("")
-  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const { openDialog } = useGlobalDialog();
+  const showDialog = () => {
+    openDialog({
+      title: "Prompt",
+      body: "Invalid address",
+      onConfirm: () => {
+        console.log("Item deleted");
+      },
+    });
+  };
   return (
     <InputGroup
      padding={0}
@@ -26,11 +35,10 @@ const SearchInput = () => {
       boxShadow: "none"
     }}
     className="search-box"
-    //  border="1px solid var(--input-border, #3B3B3B);"
       endElement={
-        <IconButton  className="search-btn"  onClick={() => {
-          if (value == "" || value.startsWith("ox")) {
-            setIsOpen(true)
+        <IconButton  className="search-btn" onClick={() => {
+          if (value == "" || !value.startsWith("ox")) {
+            showDialog()
             return
           }
           navigate('/mining/' + value)
@@ -46,30 +54,10 @@ const SearchInput = () => {
         className="myinput"
         border={"none"}
         borderRadius={"0.625rem"}
-        
         onChange={(e) => {
           setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))
         }}
       />
-         <Dialog.Root key={"myHeaderDialog"} open={isOpen} onOpenChange={setIsOpen} zIndex={1500}>
-          {/* <Dialog.Trigger />
-        <Dialog.Backdrop /> */}
-          <Dialog.Positioner>
-            <Dialog.Content style={{backgroundColor:'#24252b'}} zIndex={1500}>
-              <Dialog.CloseTrigger>
-                <CloseButton size="sm" onClick={() => setIsOpen(false)} style={{color:'#eee'}} _hover={{background:'none'}}/>
-              </Dialog.CloseTrigger>
-              <Dialog.Header>
-                <Dialog.Title >prompt</Dialog.Title>
-              </Dialog.Header>
-              <Dialog.Body >
-                Invalid address
-              </Dialog.Body>
-              <Dialog.Footer />
-
-            </Dialog.Content>
-          </Dialog.Positioner>
-        </Dialog.Root>
       </Flex>
      
     </InputGroup>

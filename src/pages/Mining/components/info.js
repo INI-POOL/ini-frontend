@@ -2,10 +2,11 @@ import React from 'react';
 import { Grid, GridItem, IconButton } from "@chakra-ui/react"
 import "./info.scss"
 import wallet from '@/assets/img/wallet.svg';
+
 // import wallet2 from 'src/assets/img/wallet.svg';
 
 
-import { Box, Input, InputGroup, InputLeftElement, Flex, VStack, Text, Button } from '@chakra-ui/react';
+import {Flex, VStack, Text} from '@chakra-ui/react';
 
 const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
 
