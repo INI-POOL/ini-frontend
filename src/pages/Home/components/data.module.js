@@ -26,7 +26,7 @@ const DataModule = (props) => {
                             {/* <Tooltip label="Total Hashrate is the combined hash power of all active miners on the network."> */}
                                 {/* <img src={info} alt="info" /> */}
                             {/* </Tooltip> */}
-                            <Image src={info} alt="info" />
+                            {/* <Image src={info} alt="info" /> */}
                         </Flex>
                         <Text className="data-item-value" textAlign={"left"}>{item.value}</Text>
                     </Box>
