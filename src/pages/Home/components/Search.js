@@ -46,7 +46,7 @@ const SearchInput = () => {
           className="search-btn" height={{ base: "1.5rem", md: "2.5rem" }}
           borderRadius={{ base: "0.625rem" }}
           width={{ base: "1.5rem", md: "7.5rem" }} onClick={() => {
-            if (value == "" || !value.startsWith("Ox") || !value.startsWith("OX")) {
+            if (value == "" || !value.startsWith("Ox")) {
               showDialog()
               return
             }

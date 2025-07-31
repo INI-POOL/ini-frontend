@@ -41,7 +41,7 @@ const SearchInput = () => {
     className="search-box"
       endElement={
         <IconButton  className="search-btn" onClick={() => {
-          if (value == "" || !value.startsWith("Ox") || !value.startsWith("OX")) {
+          if (value == "" || !value.startsWith("Ox")) {
             showDialog()
             return
           }
