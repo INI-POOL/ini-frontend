@@ -41,7 +41,8 @@ const SearchInput = () => {
     className="search-box"
       endElement={
         <IconButton  className="search-btn" onClick={() => {
-          if (value == "" || !value.startsWith("0x")) {
+          const trimmed = value.trim()
+          if (!trimmed || !(trimmed.startsWith("0x") || trimmed.startsWith("0X"))) {
             showDialog()
             return
           }
@@ -58,7 +59,8 @@ const SearchInput = () => {
         border={"none"}
         borderRadius={"0.625rem"}
         onChange={(e) => {
-          setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))
+          let value=e.currentTarget.value.trim();
+          setValue(value.slice(0, MAX_CHARACTERS))
         }}
       />
     </InputGroup>

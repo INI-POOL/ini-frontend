@@ -47,7 +47,8 @@ const SearchInput = () => {
           borderRadius={{ base: "0.625rem" }}
           width={{ base: "1.5rem", md: "7.5rem" }} onClick={() => {
             // console.log("value",value);
-            if (value == "" || !value.startsWith("0x")) {
+            const trimmed = value.trim()
+            if (!trimmed || !(trimmed.startsWith("0x") || trimmed.startsWith("0X"))) {
               showDialog()
               return
             }
@@ -69,7 +70,8 @@ const SearchInput = () => {
           _hover={{ border: "none", boxShadow: "none" }}
           _focus={{ border: "none", boxShadow: "none" }}
           onChange={(e) => {
-            setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))
+            let value=e.currentTarget.value.trim();
+            setValue(value.slice(0, MAX_CHARACTERS))
           }}
         />
     </InputGroup>

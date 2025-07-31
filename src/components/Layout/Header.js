@@ -1,12 +1,13 @@
 import React from 'react';
-import { Box, Link, Flex, Text } from '@chakra-ui/react';
+import { Box, Image, Flex, Text } from '@chakra-ui/react';
 import logo from '@/assets/logo.svg'
 import SearchInput from './components/Search';
-import { useLocation } from 'react-router-dom';
+import { useLocation,useNavigate } from 'react-router-dom';
 import "./header.scss"
 
 const Header = () => {
   const location = useLocation();
+  const navigate=useNavigate()
   // 判断是否为首页
   const isHomePage = location.pathname === '/';
   // console.log("isHomePage", isHomePage);
@@ -22,7 +23,11 @@ const Header = () => {
           borderRadius="md"
         >
           <Text fontSize="lg" fontWeight="bold" color="orange.700" style={{ textAlign: 'left' }}>
-            <Link href="/"> <img src={logo} alt="logo" /></Link>
+            {/* <Link href="/">  */}
+            <Image style={{ cursor: 'pointer' }}  src={logo} alt="logo"  onClick={()=>{
+               navigate('/')
+            }}/>
+            {/* </Link> */}
           </Text>
           <Flex justify="flex-end" style={{ minWidth: "40%" }}>
             {!isHomePage &&
