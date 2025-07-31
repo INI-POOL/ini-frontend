@@ -42,11 +42,11 @@ const SearchInput = () => {
       }}
       borderRadius={{ base: "0.625rem", md: "0.9375rem" }}
       endElement={
-        <IconButton backgroundColor={'linear-gradient(90deg, #C9BFFF 0%, #AC9DFB 100%)'}
+        <IconButton key={"search-btn"} backgroundColor={'linear-gradient(90deg, #C9BFFF 0%, #AC9DFB 100%)'}
           className="search-btn" height={{ base: "1.5rem", md: "2.5rem" }}
           borderRadius={{ base: "0.625rem" }}
           width={{ base: "1.5rem", md: "7.5rem" }} onClick={() => {
-            console.log("value",value);
+            // console.log("value",value);
             if (value == "" || !value.startsWith("0x")) {
               showDialog()
               return
@@ -64,7 +64,7 @@ const SearchInput = () => {
           className="myinput"
           padding={"0.625rem 0.625rem 0.625rem 1.25rem"}
           height={{ base: "2.5rem", md: "3.75rem" }}
-          focusBorderColor="transparent"
+          // focusBorderColor="transparent"
           border="none"
           _hover={{ border: "none", boxShadow: "none" }}
           _focus={{ border: "none", boxShadow: "none" }}

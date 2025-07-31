@@ -27,7 +27,7 @@ const navigate = useNavigate();
             bgGradient: "linear(90deg, #AC9DFB 0%, #C9BFFF 100%)"
           }} 
           onClick={() => {
-            navigate('/home/')
+            navigate('/')
           }}>
           <Text className="isMobileHide" color={"#000"}>Go back home</Text>
         </Button>

@@ -1,5 +1,5 @@
 
-import { Table, Text, Image, Badge, Flex,Clipboard } from "@chakra-ui/react"
+import { Table, Text, Image, Badge, Flex,Clipboard, Spacer } from "@chakra-ui/react"
 import './machinesTable.scss'
 import Paid from "@/assets/img/paid.svg"
 import Unpaid from "@/assets/img/unpaid.svg"
@@ -19,7 +19,7 @@ const DataTable = ({reward}) => {
   }
   return (
 
-    <Table.ScrollArea borderWidth="0px" rounded="md" height="300px" className="table-scroll-container">
+    <Table.ScrollArea key={"rewardsTbale"} borderWidth="0px" rounded="md" height="300px" className="table-scroll-container">
       <Table.Root size="sm" stickyHeader variant="unstyled">
         <Table.Header>
           <Table.Row bg="#060811" py="0.9375rem">
@@ -34,8 +34,7 @@ const DataTable = ({reward}) => {
 
           </Table.Row>
         </Table.Header>
-
-        <Table.Body>
+        <Table.Body key={"rewards"}>
           {reward?.pay_details?.map((item) => (
             <Table.Row key={item.data} bg="#060811" py="0.9375rem" style={{ borderTop: "0.3125rem solid #060811", background: "rgba(255, 255, 255, 0.02)" }}>
               <Table.Cell textAlign="center"  borderWidth="0px" fontSize="0.875rem">{formatDate(item.date)}</Table.Cell>
@@ -46,7 +45,7 @@ const DataTable = ({reward}) => {
             <Clipboard.Root
               value={item.tx_hash}>
               <Clipboard.Trigger asChild>
-                <Text cursor={'pointer'} borderRadius={"0.3125rem"}  padding={"0.1875rem 0.5rem"} fontWeight='400' >
+                <Spacer cursor={'pointer'} borderRadius={"0.3125rem"}  padding={"0.1875rem 0.5rem"} fontWeight='400' >
                   {formatWalletAddress(item.tx_hash,5,16)}
                   {hovered && (
                     <Clipboard.Indicator display="inline-block" marginLeft={0.125} />
@@ -54,7 +53,7 @@ const DataTable = ({reward}) => {
                   {!hovered && (
                     <Clipboard.Indicator display="inline-block" color={"#0b0d15"} marginLeft={0.125} />
                   )}
-                </Text>
+                </Spacer>
               </Clipboard.Trigger>
             </Clipboard.Root>
                 </Table.Cell>

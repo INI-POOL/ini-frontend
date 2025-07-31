@@ -18,7 +18,7 @@ const Home = () => {
   const getRewardList = async () => {
     try {
       const response = await poolApi.getBlockReward();
-      console.log(response.data)
+      // console.log(response.data)
       if(response.success){
         setRewardList(response.data)
       }
