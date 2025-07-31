@@ -311,9 +311,9 @@ const Mining = () => {
     }, [])
 
     const options = [
-        { key: 'all', label: `All (${totalCount})` },
-        { key: 'online', label: `Online (${aliveCount})` },
-        { key: 'offline', label: `Offline (${totalCount-aliveCount})`, extraClass: 'red' }
+        { key: 'all', label: `All (${machines.length})` },
+        { key: 'online', label: `Online (${onlineMachines.length})` },
+        { key: 'offline', label: `Offline (${offlineMachines.length})`, extraClass: 'red' }
     ];
     return (
         <Box

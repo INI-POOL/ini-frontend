@@ -4,7 +4,8 @@ import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import { IconButton} from "@chakra-ui/react"
 import SearchIcon from "@/assets/img/search.svg"
-import { useGlobalDialog } from "@/components/ui/GlobalDialogProvider";
+// import { useGlobalDialog } from "@/components/ui/GlobalDialogProvider";
+import { toaster } from "@/components/ui/toaster"
 
 
 const MAX_CHARACTERS = 500
@@ -13,14 +14,18 @@ const SearchInput = () => {
   const [value, setValue] = useState("")
   const navigate = useNavigate();
   // const [isOpen, setIsOpen] = useState(false);
-  const { openDialog } = useGlobalDialog();
+  // const { openDialog } = useGlobalDialog();
   const showDialog = () => {
-    openDialog({
-      title: "Prompt",
-      body: "Invalid address",
-      onConfirm: () => {
-        console.log("Item deleted");
-      },
+    // openDialog({
+    //   title: "Prompt",
+    //   body: "Invalid address",
+    //   onConfirm: () => {
+    //     console.log("Item deleted");
+    //   },
+    // });
+    toaster.create({
+      title: 'Invalid address',
+      type: 'error',
     });
   };
 
@@ -41,7 +46,7 @@ const SearchInput = () => {
           className="search-btn" height={{ base: "1.5rem", md: "2.5rem" }}
           borderRadius={{ base: "0.625rem" }}
           width={{ base: "1.5rem", md: "7.5rem" }} onClick={() => {
-            if (value == "" || !value.startsWith("ox")) {
+            if (value == "" || !value.startsWith("Ox") || !value.startsWith("OX")) {
               showDialog()
               return
             }

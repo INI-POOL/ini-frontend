@@ -6,7 +6,7 @@ import { IconButton } from "@chakra-ui/react"
 // import { LuSearch } from "react-icons/lu"
 import SearchIcon from "@/assets/img/search.svg"
 import { useGlobalDialog } from "@/components/ui/GlobalDialogProvider";
-
+import { toaster } from "@/components/ui/toaster"
 const MAX_CHARACTERS = 250
 
 const SearchInput = () => {
@@ -14,12 +14,16 @@ const SearchInput = () => {
   const navigate = useNavigate();
   const { openDialog } = useGlobalDialog();
   const showDialog = () => {
-    openDialog({
-      title: "Prompt",
-      body: "Invalid address",
-      onConfirm: () => {
-        console.log("Item deleted");
-      },
+    // openDialog({
+    //   title: "Prompt",
+    //   body: "Invalid address",
+    //   onConfirm: () => {
+    //     console.log("Item deleted");
+    //   },
+    // });
+    toaster.create({
+      title: 'Invalid address',
+      type: 'error',
     });
   };
   return (
@@ -37,7 +41,7 @@ const SearchInput = () => {
     className="search-box"
       endElement={
         <IconButton  className="search-btn" onClick={() => {
-          if (value == "" || !value.startsWith("ox")) {
+          if (value == "" || !value.startsWith("Ox") || !value.startsWith("OX")) {
             showDialog()
             return
           }
@@ -47,7 +51,6 @@ const SearchInput = () => {
         </IconButton>
       }
     >
-      <Flex>
       <Input
         placeholder="Please enter address"
         value={value}
@@ -58,8 +61,6 @@ const SearchInput = () => {
           setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))
         }}
       />
-      </Flex>
-     
     </InputGroup>
   )
 }
