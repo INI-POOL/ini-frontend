@@ -12,8 +12,8 @@ const ChartPanel = ({ x_data, y_data }) => {
       text: '',
     },
     grid:{
-      left:'0.8%',
-      right:'0.9%',
+      left:'3%',
+      right:'2%',
       top:'1%',
       bottom:'10%',
       containLabel: true  // ✅ 确保标签在 grid 内部

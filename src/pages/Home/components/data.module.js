@@ -18,7 +18,7 @@ const DataModule = (props) => {
                     // flexBasis={{ base: "48%", sm: "48%", md: "24%" }}
                     className="data-item"
                     p="4"
-                    w={{ base: "100%", sm: "100%", md: "auto" }}
+                    w={{ base: "100%", sm: "50%", md: "50%",xl:"auto" }}
                 >
                     <Box w="full">
                         <Flex alignItems="start" gap="0.3125rem" className="data-item-title" textAlign={"left"}  fontSize={{base:"0.75rem",md:"0.875rem"}}>

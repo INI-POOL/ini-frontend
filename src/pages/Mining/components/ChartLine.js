@@ -12,11 +12,11 @@ export default function ChartPanel({ x_data, y_data }) {
       text: '',
     },
     grid:{
-      left:'0.8%',
-      right:'0.9%',
+      left:'3%',
+      right:'2%',
       // top:0,
-      top:'5%',
-      bottom:'10%',
+      top:'0%',
+      bottom:'0%',
       containLabel: true  // ✅ 确保标签在 grid 内部
     },
     tooltip: {},
@@ -28,7 +28,7 @@ export default function ChartPanel({ x_data, y_data }) {
       data: x_data||[],
       axisLabel: {
         color: '#858585',
-        fontSize: 12,
+        fontSize: 10,
         formatter: function (value) {
           return dayjs(Number(value*1000)).format("HH:mm");
         },
@@ -59,6 +59,7 @@ export default function ChartPanel({ x_data, y_data }) {
         show:false
       },
       axisLabel: {
+        show:false,
         formatter: function (value) {
           if (value >= 1e9) return (value / 1e9).toFixed(2) + 'G';
           if (value >= 1e6) return (value / 1e6).toFixed(2) + 'M';
