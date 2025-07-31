@@ -11,7 +11,7 @@ import {Flex, VStack, Text} from '@chakra-ui/react';
 const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
 
     return (
-        <div className="baseinfo " textAlign="left">
+        <div className="baseinfo " style={{textAlign:"left"}} >
             <Flex textAlign="left">
                 <Flex gap="0.625rem" flexDirection={{ base: "column", md: "row" }}>
                     <Text> 
@@ -22,7 +22,7 @@ const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
                     <Text className='value' fontSize={["0.875rem","1.25rem"]}>{walletaddress}</Text>
                 </Flex>
             </Flex>
-            <div textAlign="left" style={{width:"100%"}}>
+            <div style={{width:"100%",textAlign:"left"}}>
                 <Grid templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(7, 1fr)" }}
   gap={{ base: 4, md: 7 }} >
                     <GridItem>

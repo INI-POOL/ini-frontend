@@ -20,8 +20,8 @@ const OnlineMachinesTable = ({machines}) => {
         </Table.Header>
 
         <Table.Body>
-          {machines.map((item) => (
-            <Table.Row key={item.id} bg="#060811" py="0.9375rem" style={{ borderTop: "0.3125rem solid #060811", background: "rgba(255, 255, 255, 0.02)" }}>
+          {machines.map((item,index) => (
+            <Table.Row key={index} bg="#060811" py="0.9375rem" style={{ borderTop: "0.3125rem solid #060811", background: "rgba(255, 255, 255, 0.02)" }}>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.machine_name}</Table.Cell>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{formatLargeNumber(item.hashrate)}h/s</Table.Cell>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{formatLargeNumber(item.stale_rate)}h/s</Table.Cell>

@@ -18,9 +18,9 @@ const AllMachinesTable = ({ machines }) => {
           </Table.Row>
         </Table.Header>
 
-        <Table.Body>
+        <Table.Body key="allmachines">
           {machines.map((item) => (
-            <Table.Row key={item.id} bg="#060811" py="0.9375rem" style={{ borderTop: "0.3125rem solid #060811", background: "rgba(255, 255, 255, 0.02)" }}>
+            <Table.Row key={item.machine_name} bg="#060811" py="0.9375rem" style={{ borderTop: "0.3125rem solid #060811", background: "rgba(255, 255, 255, 0.02)" }}>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{item.machine_name}</Table.Cell>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{formatLargeNumber(item.hashrate)}h/s</Table.Cell>
               <Table.Cell textAlign="center" borderWidth="0px" fontSize="0.875rem">{formatLargeNumber(item.stale_rate)}h/s</Table.Cell>
