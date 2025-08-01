@@ -70,7 +70,7 @@ const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle'>Real-time Hashrate</Text>
-                            <Text className='basevalue'>{machinesinfo.total_hashrate}</Text>
+                            <Text className='basevalue'>{machinesinfo.total_hashrate}h/s</Text>
                         </VStack></GridItem>
                     {/* <GridItem>
                         <VStack className='baseItem'>
