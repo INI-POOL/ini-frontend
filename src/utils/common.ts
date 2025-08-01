@@ -12,8 +12,8 @@ export const formatDate = (timestamp: number,ret:String) => {
     return `${Y}-${M}-${D} ${h}:${m}:${s}`;
   };
 
-  export const  formatLargeNumber=(value:number)=> {
-    if (typeof value !== 'number' || isNaN(value)) return '-';
+  export const  formatLargeNumber=(value:any)=> {
+    if (typeof value !== 'number' || isNaN(value)) return '-'+" ";
     const units = ['', 'K', 'M', 'G', 'T', 'P'];
     let index = 0;
   
@@ -22,7 +22,7 @@ export const formatDate = (timestamp: number,ret:String) => {
       index++;
     }
   
-    return value.toFixed(2).replace(/\.00$/, '') + units[index];
+    return value.toFixed(2).replace(/\.00$/, '') +" "+units[index];
   }
 
   export const formatWalletAddress=(address:string, prefixLength = 6, suffixLength = 4) =>{

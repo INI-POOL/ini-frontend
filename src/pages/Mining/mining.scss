@@ -49,10 +49,16 @@
       background: #363646;
       color: #fff;
       font-size: 0.75rem;
+      transition: all 0.3s ease; // 加动画过渡
+      &.red{
+        color: red;
+      }
     }
     .uncheck{
-      background: none;
+      background: transparent;
+      padding: 0.1875rem;
       font-size: 0.75rem;
+      gap: 0.625rem;
       color: #fff;
       &.red{
         color: red;
