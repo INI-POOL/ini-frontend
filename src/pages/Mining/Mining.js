@@ -118,7 +118,7 @@ const Mining = () => {
                 <BaseInfo walletaddress={walletAddress} baseBasic={baseBasic} reward={reward} machinesinfo={baseinfo}/>
             </div>
             <Box marginBottom={{base:'0rem',md:"1.56rem"}} marginTop={{ base: "1.25rem", sm: "3.75rem" }} className='chart-wapper'>
-                <Text fontSize={{ base: '0.75rem', sm: '0.875rem' }}>24H  Hashrate</Text>
+                <Text fontSize={{ base: '0.75rem', sm: '0.875rem' }}>12H  Hashrate</Text>
                 <Flex style={{ width: "100%" }}>
                     <ChartPanel x_data={minerHashrateTime} y_data={minerHashrate}/>
                 </Flex>

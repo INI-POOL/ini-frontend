@@ -10,8 +10,8 @@ export default function ChartPanel({ x_data, y_data }) {
       text: '',
     },
     grid:{
-      left:'3%',
-      right:'2%',
+      left:'1%',
+      right:'1%',
       // top:0,
       top:'0%',
       bottom:'0%',
@@ -20,12 +20,14 @@ export default function ChartPanel({ x_data, y_data }) {
     tooltip: {},
     xAxis: {
       boundaryGap: false,
+      // boundaryGap: false // 保证首尾数据贴边展示
       axisTick: {
         show: false,
       },
       data: x_data||[],
       axisLabel: {
         color: '#858585',
+        interval: 10, // 自动控制显示间隔，防止重叠
         fontSize: 10,
         formatter: function (value) {
           return dayjs(Number(value*1000)).format("HH:mm");
@@ -71,6 +73,15 @@ export default function ChartPanel({ x_data, y_data }) {
         name: '',
         type: 'line',
         smooth: true,
+        showSymbol: false,   // 关闭所有数据点圆圈，视觉更清爽
+        sampling: 'average',  // 对数据进行抽样（可选项：'average' | 'max' | 'min' | 'sum'）
+        // symbol: 'none', // 不显示点
+        // emphasis: {
+        //   focus: 'series',
+        //   itemStyle: {
+        //     opacity: 1
+        //   }
+        // },
         // symbol: 'none',        // ❗️隐藏数据点圆圈
         areaStyle: {
           color: 'rgba(0, 0, 0, 0.1)',
@@ -96,7 +107,7 @@ export default function ChartPanel({ x_data, y_data }) {
     ],
   };
   return (
-    <Box p={6} style={{ background: 'none',width:"100%" }} borderRadius="md" boxShadow="md" >
+    <Box style={{ background: 'none',width:"105%" }} borderRadius="md" boxShadow="md" >
       <ReactECharts option={option} style={{ width: '100%',background:'none' }} height={{base:"43px",md:"250px"}} />
     </Box>
   );

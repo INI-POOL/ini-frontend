@@ -44,8 +44,9 @@ const DataTable = ({reward}) => {
             <Clipboard.Root
               value={item.tx_hash}>
               <Clipboard.Trigger asChild>
-                <Flex cursor={'pointer'} borderRadius={"0.3125rem"}  padding={"0.1875rem 0.5rem"} fontWeight='400' >
-                  {formatWalletAddress(item.tx_hash,5,16)}
+                <Flex  cursor={'pointer'} borderRadius={"0.3125rem"}  padding={"0.1875rem 0.5rem"} fontWeight='400'   alignItems="center"           // 垂直居中
+  justifyContent="center"  >
+                  <text>{formatWalletAddress(item.tx_hash,5,16)}</text>
                   {hovered && (
                     <Clipboard.Indicator display="inline-block" marginLeft={0.125} />
                   )}
@@ -70,13 +71,5 @@ const DataTable = ({reward}) => {
   )
 }
 
-
-const items = [
-  { id: "773.9%", name: "464817", category: "07-03 11:00", price: 999.991233, status: "Paid" },
-  { id: "773.9%", name: "464817", category: "07-03 11:00", price: 649.991233, status: "Unpaid" },
-  { id: "773.9%", name: "464817", category: "07-03 11:00", price: 150.001233, status: "Unpaid" },
-  { id: "773.9%", name: "464817", category: "07-03 11:00", price: 799.991233, status: "Unpaid" },
-  { id: "773.9%", name: "464817", category: "07-03 11:00", price: 199.991233, status: "Paid" },
-]
 
 export default DataTable;

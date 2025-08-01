@@ -23,7 +23,7 @@ const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
                 </Flex>
             </Flex>
             <div style={{width:"100%",textAlign:"left"}}>
-                <Grid templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(7, 1fr)" }}
+                <Grid templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(6, 1fr)" }}
   gap={{ base: 4, md: 7 }} >
                     <GridItem>
                         <VStack className='baseItem'>
@@ -72,11 +72,11 @@ const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
                             <Text className='baseTitle'>Real-time Hashrate</Text>
                             <Text className='basevalue'>{machinesinfo.total_hashrate}</Text>
                         </VStack></GridItem>
-                    <GridItem>
+                    {/* <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle'>Average Daily Hashrate</Text>
                             <Text className='basevalue'>--</Text>
-                        </VStack></GridItem>
+                        </VStack></GridItem> */}
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle'>Mining Machines</Text>
