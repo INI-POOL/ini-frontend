@@ -40,7 +40,9 @@ const SearchInput = () => {
     }}
     className="search-box"
       endElement={
-        <IconButton  className="search-btn" onClick={() => {
+        <IconButton  className="search-btn" 
+      
+        onClick={() => {
           const trimmed = value.trim()
           if (!trimmed || !(trimmed.startsWith("0x") || trimmed.startsWith("0X"))) {
             showDialog()
@@ -61,6 +63,17 @@ const SearchInput = () => {
         onChange={(e) => {
           let value=e.currentTarget.value.trim();
           setValue(value.slice(0, MAX_CHARACTERS))
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            // console.log('你按了回车');
+            const trimmed = value.trim()
+            if (!trimmed || !(trimmed.startsWith("0x") || trimmed.startsWith("0X"))) {
+              showDialog()
+              return
+            }
+            navigate('/mining/' + value)
+          }
         }}
       />
     </InputGroup>

@@ -12,7 +12,7 @@ const ChartPanel = ({ x_data, y_data }) => {
       text: '',
     },
     grid:{
-      left:'3%',
+      left:'2%',
       right:'2%',
       top:'1%',
       bottom:'10%',
@@ -32,6 +32,9 @@ const ChartPanel = ({ x_data, y_data }) => {
       },
       splitLine:{
         show:false
+      },
+      axisLine: {
+        show: false,  // 👈 隐藏X轴坐标轴线
       },
       data: x_data||[],
       boundaryGap: false,
@@ -93,7 +96,9 @@ const ChartPanel = ({ x_data, y_data }) => {
           width: 2,
           color: '#212121'
         },
-        smooth: true,
+        // smooth: true,
+        showSymbol: false,   // 关闭所有数据点圆圈，视觉更清爽
+        sampling: 'average',  // 对数据进行抽样（可选项：'average' | 'max' | 'min' | 'sum'）
         // symbol: 'none',        // ❗️隐藏数据点圆圈
         // animation: false,   // 禁用动画，防止视觉先后差异
         areaStyle: {
@@ -110,39 +115,13 @@ const ChartPanel = ({ x_data, y_data }) => {
           ])
         },
         data: y_data||[],
-      },
-      // {
-      //   name: 'Mining Pool',
-      //   type: 'line',
-      //   smooth: true,
-      //   // symbol: 'none',        // ❗️隐藏数据点圆圈
-      //   areaStyle: {
-      //     color: 'rgba(0, 0, 0, 0.1)',
-      //   },
-      //   lineStyle: {
-      //     color: '#0E9CFF' // #0E9CFF 设置线颜色（波线颜色）
-      //   },
-      //   areaStyle: {
-      //     // 顶部到底部渐变
-      //     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-      //       {
-      //         offset: 0,
-      //         color: 'rgba(14, 156, 255, 0.2)' // 顶部颜色
-      //       },
-      //       {
-      //         offset: 1,
-      //         color: 'rgba(0, 191, 255, 0)' // 底部透明
-      //       }
-      //     ])
-      //   },
-      //   data: [30, 50, 42, 60, 20, 30],
-      // },
-    ],
+      }
+    ]
   };
   
   return (
     // <Box p={6}  borderRadius="md" boxShadow="md" padding={{base:"0.4375rem 0.625rem",md:"0.9375rem"}}>
-    <Box p={6} borderRadius="md" boxShadow="md" padding={{base:"0",md:"0"}}>
+    <Box  borderRadius="md" boxShadow="md" padding={{base:"0",md:"0"}}>
     <ReactECharts option={option} style={{ height: '300px', width: '100%' }} />
     </Box>
   );

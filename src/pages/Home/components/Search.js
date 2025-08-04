@@ -16,13 +16,6 @@ const SearchInput = () => {
   // const [isOpen, setIsOpen] = useState(false);
   // const { openDialog } = useGlobalDialog();
   const showDialog = () => {
-    // openDialog({
-    //   title: "Prompt",
-    //   body: "Invalid address",
-    //   onConfirm: () => {
-    //     console.log("Item deleted");
-    //   },
-    // });
     toaster.create({
       title: 'Invalid address',
       type: 'error',
@@ -46,7 +39,6 @@ const SearchInput = () => {
           className="search-btn" height={{ base: "1.5rem", md: "2.5rem" }}
           borderRadius={{ base: "0.625rem" }}
           width={{ base: "1.5rem", md: "7.5rem" }} onClick={() => {
-            // console.log("value",value);
             const trimmed = value.trim()
             if (!trimmed || !(trimmed.startsWith("0x") || trimmed.startsWith("0X"))) {
               showDialog()
@@ -72,6 +64,17 @@ const SearchInput = () => {
           onChange={(e) => {
             let value=e.currentTarget.value.trim();
             setValue(value.slice(0, MAX_CHARACTERS))
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              // console.log('你按了回车');
+              const trimmed = value.trim()
+              if (!trimmed || !(trimmed.startsWith("0x") || trimmed.startsWith("0X"))) {
+                showDialog()
+                return
+              }
+              navigate('/mining/' + value)
+            }
           }}
         />
     </InputGroup>

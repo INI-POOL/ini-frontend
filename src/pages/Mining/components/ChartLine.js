@@ -10,7 +10,7 @@ export default function ChartPanel({ x_data, y_data }) {
       text: '',
     },
     grid:{
-      left:'1%',
+      left:'2%',
       right:'1%',
       // top:0,
       top:'0%',
@@ -35,6 +35,9 @@ export default function ChartPanel({ x_data, y_data }) {
       },
       splitLine:{
         show:false
+      },
+      axisLine: {
+        show: false,  // 👈 隐藏X轴坐标轴线
       }
     },
     tooltip: {

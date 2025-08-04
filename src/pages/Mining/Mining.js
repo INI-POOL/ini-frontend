@@ -22,8 +22,7 @@ const Mining = () => {
     const [offlineMachines,setOfflineMachines]= useState([]);
     const [reward,setReward]= useState({});
     const [baseBasic,setBaseBasic]= useState({});
-    const [totalCount,setTotalCount]=useState(0); // 总机器数
-    const [aliveCount,setAliveCount]=useState(0); // 在线机器数
+
     // 调用登录接口
     const getMinersHashrate = async () => {
         try {
@@ -33,8 +32,8 @@ const Mining = () => {
                 setBaseinfo(response.data)
                 // console.log(response.data.machine_alive)
                 // console.log(response.data.machine_count)
-                setAliveCount(response.data.machine_alive);
-                setTotalCount(response.data.machine_count);
+                // setAliveCount(response.data.machine_alive);
+                // setTotalCount(response.data.machine_count);
                 let x_data=[]
                 let y_data=[]
                 response.data.hash_history.forEach(element => {
@@ -47,6 +46,9 @@ const Mining = () => {
             // 处理响应数据
         } catch (error) {
             // 处理错误
+            setBaseinfo({})
+            setMinersHashrate([])
+            setMinersHashrateTime([])
             console.log(error)
         }
     };
@@ -71,6 +73,9 @@ const Mining = () => {
             // 处理响应数据
         } catch (error) {
             // 处理错误
+            setMachines([])
+            setOnlineMachines([])
+            setOfflineMachines([])
         }
     };
     const getMinersReward = async () => {
@@ -91,6 +96,8 @@ const Mining = () => {
             }
             // 处理响应数据
         } catch (error) {
+            setBaseBasic({})
+            setReward({})
             console.log(error)
         }
     };
@@ -99,7 +106,7 @@ const Mining = () => {
         getMinersHashrate()
         getMinersMachines()
         getMinersReward()
-    }, [])
+    }, [walletAddress])
 
     const options = [
         { key: 'all', label: `All (${machines.length})` },
@@ -141,7 +148,6 @@ const Mining = () => {
                                 </Badge>
                             ))}
                         </Stack>
-
                     </Flex>
                     <Box className='table-wapper' gap={{ base: "0.625rem" }} padding={{ base: "0 0.9375rem" }}>
                         <div className='table-content'>
