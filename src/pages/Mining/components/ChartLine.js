@@ -3,8 +3,32 @@ import ReactECharts from 'echarts-for-react';
 import { Box, Heading, Show } from '@chakra-ui/react';
 import * as echarts from 'echarts';
 import dayjs from "dayjs"; // 推荐使用 dayjs，轻量好用
+import { formatLargeNumber } from '@/utils/common.ts'
 
 export default function ChartPanel({ x_data, y_data }) {
+  if(x_data.length==0) x_data=[1754378400,1754379000,1754379600,1754380200,1754380800]
+  if(y_data.length==0) y_data=[10100,402000,103000,300000,203000]
+  const emptyOption = {
+    title: {
+      text: '',
+    },
+    xAxis: {
+      show: false,
+    },
+    yAxis: {
+      show: false,
+    },
+    graphic: {
+      type: 'text',
+      left: 'center',
+      top: 'middle',
+      style: {
+        text: 'NODATA',
+        fontSize: 20,
+        fill: '#999'
+      }
+    }
+  };
   const option = {
     title: {
       text: '',
@@ -17,7 +41,6 @@ export default function ChartPanel({ x_data, y_data }) {
       bottom:'0%',
       containLabel: true  // ✅ 确保标签在 grid 内部
     },
-    tooltip: {},
     xAxis: {
       boundaryGap: false,
       // boundaryGap: false // 保证首尾数据贴边展示
@@ -27,7 +50,7 @@ export default function ChartPanel({ x_data, y_data }) {
       data: x_data||[],
       axisLabel: {
         color: '#858585',
-        interval: 10, // 自动控制显示间隔，防止重叠
+        // interval: 10, // 自动控制显示间隔，防止重叠
         fontSize: 10,
         formatter: function (value) {
           return dayjs(Number(value*1000)).format("HH:mm");
@@ -52,8 +75,20 @@ export default function ChartPanel({ x_data, y_data }) {
       extraCssText: 'text-align: left;', // 👈 关键设置
       formatter: function (params) {
         const time = dayjs(Number(params[0].name)*1000).format("YYYY-MM-DD HH:mm:ss");
-        const value = params[0].value;
+        const value = formatLargeNumber(params[0].value)+"H/S";
+        // const value = formatLargeNumber("5555")+"H/S";
         return `${time}<br/>${value}`;
+      },
+      axisPointer: {
+        type: 'line',
+        lineStyle: {
+          width: 1,
+          type: 'solid',
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 1, color: 'rgba(153, 153, 153, 0.00)' },
+            { offset: 0, color: '#B2A4FC' }
+          ])
+        }
       },
     },
     yAxis: {
@@ -111,7 +146,7 @@ export default function ChartPanel({ x_data, y_data }) {
   };
   return (
     <Box style={{ background: 'none',width:"105%" }} borderRadius="md" boxShadow="md" >
-      <ReactECharts option={option} style={{ width: '100%',background:'none' }} height={{base:"43px",md:"250px"}} />
+      <ReactECharts option={(x_data?.length ?? 0) > 0 ? option:emptyOption} style={{ width: '100%',background:'none' }} height={{base:"43px",md:"250px"}} />
     </Box>
   );
 }

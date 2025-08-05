@@ -149,27 +149,29 @@ const ChartPanel = ({ x_data = [], y_data = [] }) => {
   const chartRef = useRef(null);
 
   useEffect(() => {
-    setChartData({ x: [], y: [] });
-    indexRef.current = 0;
+    // setChartData({ x: [], y: [] });
+    // indexRef.current = 0;
+    setChartData({x:x_data,y:y_data})
+    // const interval = setInterval(() => {
+    //   if (indexRef.current >= y_data.length) {
+    //     clearInterval(interval);
+    //     return;
+    //   }
 
-    const interval = setInterval(() => {
-      if (indexRef.current >= y_data.length) {
-        clearInterval(interval);
-        return;
-      }
+    //   setChartData(prev => ({
+    //     x: [...prev.x, x_data[indexRef.current]],
+    //     y: [...prev.y, y_data[indexRef.current]]
+    //   }));
 
-      setChartData(prev => ({
-        x: [...prev.x, x_data[indexRef.current]],
-        y: [...prev.y, y_data[indexRef.current]]
-      }));
+    //   indexRef.current += 1;
+    // }, 30); // 每 30ms 加一个点
 
-      indexRef.current += 1;
-    }, 30); // 每 30ms 加一个点
-
-    return () => clearInterval(interval);
+    // return () => clearInterval(interval);
   }, [x_data, y_data]);
 
   const option = {
+    animationDuration: 2000, // 控制整体动画加载的时间（单位：ms）
+    animationEasing: 'linear', // 线性过渡
     grid: {
       left: '0%',
       right: '0%',
@@ -179,8 +181,8 @@ const ChartPanel = ({ x_data = [], y_data = [] }) => {
     },
     xAxis: {
       type: 'category',
-      data:x_data,
-      // data: chartData.x,
+      // data:x_data,
+      data: chartData?.x||[],
       boundaryGap: false,
       axisTick: { show: false },
       axisLine: { show: false },
@@ -249,7 +251,7 @@ const ChartPanel = ({ x_data = [], y_data = [] }) => {
             { offset: 1, color: 'rgba(3, 22, 36, 0)' }
           ])
         },
-        data: chartData.y
+        data: chartData?.y||[]
       }
     ]
   };

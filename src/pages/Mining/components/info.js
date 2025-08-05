@@ -19,7 +19,7 @@ const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
                         <img src={wallet} />
                     </IconButton>
                     </Text>
-                    <Text className='value' fontSize={["0.875rem","1.25rem"]}>{walletaddress}</Text>
+                    <Text className='value' fontSize={["0.875rem","1.25rem"]}>{walletaddress||"--"}</Text>
                 </Flex>
             </Flex>
             <div style={{width:"100%",textAlign:"left"}}>
@@ -28,25 +28,25 @@ const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>Total Reward(INI)</Text>
-                            <Text className='basevalue'>{reward?.total_reward}</Text>
+                            <Text className='basevalue'>{reward?.total_reward||"--"}</Text>
                         </VStack>
                     </GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>Pending Balance(INI)</Text>
-                            <Text className='basevalue'>{machinesinfo?.pending_balance}</Text>
+                            <Text className='basevalue'>{machinesinfo?.pending_balance||"--"}</Text>
                         </VStack>
                     </GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>One Day (INI)</Text>
-                            <Text className='basevalue'>{baseBasic?.firstDayReward}</Text>
+                            <Text className='basevalue'>{baseBasic?.firstDayReward||"--"}</Text>
                         </VStack>
                     </GridItem>
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle' fontSize={{ base: "0.75rem"}} style={{textAlign:"left"}}>One Week (INI)</Text>
-                            <Text className='basevalue'>{baseBasic?.weekDayReward}</Text>
+                            <Text className='basevalue'>{baseBasic?.weekDayReward||"--"}</Text>
                         </VStack>
                     </GridItem>
 
@@ -70,7 +70,7 @@ const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle'>Real-time Hashrate</Text>
-                            <Text className='basevalue'>{machinesinfo.total_hashrate}h/s</Text>
+                            <Text className='basevalue'>{machinesinfo.total_hashrate||"--"}h/s</Text>
                         </VStack></GridItem>
                     {/* <GridItem>
                         <VStack className='baseItem'>
@@ -80,7 +80,7 @@ const BaseInfo = ({walletaddress,baseBasic,reward,machinesinfo}) => {
                     <GridItem>
                         <VStack className='baseItem'>
                             <Text className='baseTitle'>Mining Machines</Text>
-                            <Text className='basevalue'>{machinesinfo.machine_count}</Text>
+                            <Text className='basevalue'>{machinesinfo.machine_count||"--"}</Text>
                         </VStack></GridItem>
                 </Grid>
             </div>

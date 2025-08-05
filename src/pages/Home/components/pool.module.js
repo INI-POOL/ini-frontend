@@ -91,19 +91,17 @@ const PoolModuleData = (props) => {
               stratum+tcp://inipool.pool.com:28888
             </Text>
           </Clipboard> */}
-
-
           <Flex
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             gap={"0.625rem"} direction={"row"} alignItems={"flex-start"}>
             <Clipboard.Root
              onClick={handleCopy}
-              value="stratum+tcp://inipool.pool.com:28888">
+              value={`${props.data.poolServer}:${props.data.poolPort}`}>
               <Clipboard.Trigger asChild>
                 <Flex className='poolDesc'  cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem 0.5rem"} fontWeight='400' background="#252525">
                   {/* stratum+tcp://inipool.pool.com:28888 */}
-                  {props.data.poolServer}:{props.data.poolPort}
+                  {props.data.poolServer || "--"}:{props.data.poolPort||""}
 
                   {hovered && (
                     <Clipboard.Indicator display="inline-block" marginLeft={0.125} />
