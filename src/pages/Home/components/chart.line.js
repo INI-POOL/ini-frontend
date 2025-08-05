@@ -12,18 +12,35 @@ const ChartPanel = ({ x_data, y_data }) => {
       text: '',
     },
     grid:{
-      left:'2%',
-      right:'2%',
-      top:'1%',
-      bottom:'10%',
+      left:'0%',
+      right:'0%',
+      top:'5%',
+      bottom:'5%',
       containLabel: true  // ✅ 确保标签在 grid 内部
     },
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {
-        type: 'line'
-      }
-    },
+    // tooltip: {
+    //   trigger: 'axis',
+      // axisPointer: {
+      //   type: 'line'
+      // },
+      // axisPointer: {
+      //   type: 'line', // 默认就是 'line'，也可以是 'shadow'、'cross' 等
+      //   lineStyle: {
+      //     // color: '#FF6600',     // 支持 solid 颜色，也支持渐变
+      //     width: 2,
+      //     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+      //       { offset: 1, color: 'rgba(153, 153, 153, 0.00)' },   // 顶部颜色
+      //       { offset: 0, color: '#B2A4FC' }    // 底部颜色
+      //     ]),
+      //     type: 'solid',       // 虚线：'dashed'，实线：'solid'，点线：'dotted'
+      //   }
+      // },
+      // formatter: function (params) {
+      //   const time = dayjs(Number(params[0].name)*1000).format("YYYY-MM-DD HH:mm:ss");
+      //   const value = params[0].value;
+      //   return `${time}<br>${value} INI`;
+      // },
+    // },
     xAxis: {
       type: 'category',
       // show:false,
@@ -57,7 +74,19 @@ const ChartPanel = ({ x_data, y_data }) => {
       textStyle: {
         color: '#CBCDDE', // #fff 👈 更亮的文字颜色
         fontSize: 10
-      },                 // 边框颜色
+      },   
+      axisPointer: {
+        type: 'line', // 默认就是 'line'，也可以是 'shadow'、'cross' 等
+        lineStyle: {
+          // color: '#FF6600',     // 支持 solid 颜色，也支持渐变
+          width: 2,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 1, color: 'rgba(153, 153, 153, 0.00)' },   // 顶部颜色
+            { offset: 0, color: '#B2A4FC' }    // 底部颜色
+          ]),
+          type: 'solid',       // 虚线：'dashed'，实线：'solid'，点线：'dotted'
+        }
+      },              // 边框颜色
       borderWidth: 0.5,    // 边框宽度
       extraCssText: 'text-align: left;', // 👈 关键设置
       formatter: function (params) {
@@ -76,7 +105,7 @@ const ChartPanel = ({ x_data, y_data }) => {
         show:false
       },
       axisLabel: {
-        show:false,
+        // show:false,
         color: '#858585',
         fontSize: 10,
         formatter: function (value) {
@@ -92,9 +121,9 @@ const ChartPanel = ({ x_data, y_data }) => {
         name: 'Network Power',
         type: 'line',
         lineStyle: {
-          type: 'dashed',  // ✅ 设置虚线
-          width: 2,
-          color: '#212121'
+          // type: 'dashed',  // ✅ 设置虚线
+          width: 1,
+          color: '#0E9CFF'
         },
         // smooth: true,
         showSymbol: false,   // 关闭所有数据点圆圈，视觉更清爽
@@ -106,14 +135,15 @@ const ChartPanel = ({ x_data, y_data }) => {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {
               offset: 0,
-              color: 'rgba(103, 78, 87, 0.4)'  // #674E57 顶部颜色
+              color: '#29183E'  // #29183E  #674E57 顶部颜色
             },
             {
               offset: 1,
-              color: 'rgba(103, 78, 87, 0)' // #000000 底部透明
+              color: 'rgba(3, 22, 36, 0)' // #000000 底部透明
             }
           ])
         },
+        
         data: y_data||[],
       }
     ]

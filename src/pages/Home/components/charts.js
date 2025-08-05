@@ -26,6 +26,25 @@ const ChartData = () => {
       // 处理错误
     }
   };
+
+
+  // 生成波动线图数据，100 个点左右
+const generateWaveData = () => {
+  const data = [];
+  const now = Date.now();
+  let base = 10000;
+
+  for (let i = 0; i < 100; i++) {
+    const timestamp = now + i * 60; // 每隔1分钟
+    const fluctuation = Math.random() * 200 - 100; // ±100 波动
+    base += fluctuation;
+    data.push([timestamp, parseFloat(base.toFixed(2))]);
+  }
+
+  return data;
+};
+
+// const chartData = generateWaveData();
   // 调用图表接口
   const pool_chart_data = async (values) => {
     try {
@@ -43,6 +62,15 @@ const ChartData = () => {
       }
       // 处理响应数据
     } catch (error) {
+      let x_data=[];
+      let y_data=[];
+      let ret_data=generateWaveData();
+      ret_data.forEach(element => {
+        x_data.push(element[0])
+        y_data.push(element[1])
+      });
+      setPoolRewardX(x_data)
+      setPoolRewardData(y_data)
       // 处理错误
     }
   };
@@ -55,7 +83,7 @@ const ChartData = () => {
   return (
     <Grid templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }} gap="6">
       <GridItem colSpan={{ base: 1, md: 3 }} className='commonBg'>
-        <Box p={6} style={{ background: 'none' }} borderRadius="md" boxShadow="md" padding={{ base: "0.4375rem 0.625rem", md: "0.9375rem" }}>
+        <Box  style={{ background: 'none' }} borderRadius="md" boxShadow="md" padding={{ base: "0.4375rem 0.625rem", md: "0.9375rem" }}>
           <Flex direction={{ base: "row", sm: "row" }} gap="4" justify="space-between">
             <Flex gap={{ base: '0.5rem' }} direction={{ base: 'column' }} fontSize={{ base: "0.75rem", sm: "0.875rem" }}>
               <Text className='chartTitle'>
