@@ -6,8 +6,8 @@ import dayjs from "dayjs"; // 推荐使用 dayjs，轻量好用
 import { formatLargeNumber } from '@/utils/common.ts'
 
 export default function ChartPanel({ x_data, y_data }) {
-  if(x_data.length==0) x_data=[1754378400,1754379000,1754379600,1754380200,1754380800]
-  if(y_data.length==0) y_data=[10100,402000,103000,300000,203000]
+  // if(x_data.length==0) x_data=[1754378400,1754379000,1754379600,1754380200,1754380800]
+  // if(y_data.length==0) y_data=[10100,402000,103000,300000,203000]
   const emptyOption = {
     title: {
       text: '',
