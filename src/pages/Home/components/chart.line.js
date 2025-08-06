@@ -142,6 +142,7 @@ import ReactECharts from 'echarts-for-react';
 import { Box } from '@chakra-ui/react';
 import * as echarts from 'echarts';
 import dayjs from 'dayjs';
+import { data } from 'react-router-dom';
 
 const ChartPanel = ({ x_data = [], y_data = [] }) => {
   const [chartData, setChartData] = useState({ x: [], y: [] });
@@ -170,7 +171,7 @@ const ChartPanel = ({ x_data = [], y_data = [] }) => {
   }, [x_data, y_data]);
 
   const option = {
-    animationDuration: 2000, // 控制整体动画加载的时间（单位：ms）
+    // animationDuration: 2000, // 控制整体动画加载的时间（单位：ms）
     animationEasing: 'linear', // 线性过渡
     grid: {
       left: '0%',
@@ -181,8 +182,8 @@ const ChartPanel = ({ x_data = [], y_data = [] }) => {
     },
     xAxis: {
       type: 'category',
-      // data:x_data,
-      data: chartData?.x||[],
+      data:x_data,
+      // data: chartData?.x||[],
       boundaryGap: false,
       axisTick: { show: false },
       axisLine: { show: false },
@@ -251,7 +252,8 @@ const ChartPanel = ({ x_data = [], y_data = [] }) => {
             { offset: 1, color: 'rgba(3, 22, 36, 0)' }
           ])
         },
-        data: chartData?.y||[]
+        data:y_data
+        // data: chartData?.y||[]
       }
     ]
   };

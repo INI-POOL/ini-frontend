@@ -47,7 +47,7 @@ const PoolModuleData = (props) => {
           Mining Pool Fee Rate
         </Text>
         <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
-          {props.data.feeRate}%
+          {props.data.feeRate || "--"}%
         </Text>
       </Box>
 
@@ -57,7 +57,7 @@ const PoolModuleData = (props) => {
         </Text>
         <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
           {/* 7:30 (UTC) */}
-          {props.data.paymentTime}
+          {props.data.paymentTime || "--"}
         </Text>
       </Box>
 
@@ -67,7 +67,7 @@ const PoolModuleData = (props) => {
         </Text>
         <Text className='poolDesc' fontSize='1rem' fontWeight='400'>
           {/* 0.1 */}
-          {props.data.minPayValue} INI
+          {props.data.minPayValue||"--"} INI
         </Text>
       </Box>
 
@@ -86,11 +86,6 @@ const PoolModuleData = (props) => {
           </IconButton>
         </Flex>
         <Flex gap={"0.625rem"} direction={"column"}>
-          {/* <Clipboard textToCopy="stratum+tcp://inipool.pool.com:28888">
-            <Text className='poolDesc' onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
-              stratum+tcp://inipool.pool.com:28888
-            </Text>
-          </Clipboard> */}
           <Flex
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -110,27 +105,7 @@ const PoolModuleData = (props) => {
               </Clipboard.Trigger>
             </Clipboard.Root>
           </Flex>
-          {/* <Badge display="inline-block" >stratum+tcp://inipool.pool.com:28888</Badge> */}
-          {/* <Flex
-            onMouseEnter={() => setHovered2(true)}
-            onMouseLeave={() => setHovered2(false)}
-            onClick={handleCopy} gap={"0.625rem"} direction={"row"} alignItems={"flex-start"}>
-            <Clipboard.Root
-              value="stratum+tcp://inipool.pool.com:28889">
-              <Clipboard.Trigger asChild>
-                <Text className='poolDesc' onClick={handleCopy} cursor={'pointer'} borderRadius={"0.3125rem"} fontSize='0.75rem' padding={"0.1875rem"} fontWeight='400' background="#252525">
-                  stratum+tcp://inipool.pool.com:28889
-
-                  {hovered2 && (
-                    <Clipboard.Indicator display="inline-block" marginLeft={0.125} />
-
-                  )}
-                </Text>
-              </Clipboard.Trigger>
-            </Clipboard.Root>
-          </Flex> */}
         </Flex>
-
       </Flex>
     </Flex>
   )
