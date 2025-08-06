@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const baseURL = process.env.REACT_APP_API_URL || 'http://106.15.102.142:8080/api/v1';
-
+// const baseURL = process.env.REACT_APP_API_URL || 'http://106.15.102.142:8080/api/v1';
+// const baseURL = process.env.REACT_APP_API_URL || 'https://www.inipool.com/api/v1';
+const baseURL = process.env.REACT_APP_API_URL || 'https://www.inipool.com/api/v1';
 const request = axios.create({
   baseURL,
   timeout: 10000,

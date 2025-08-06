@@ -37,7 +37,7 @@ export default function ChartPanel({ x_data, y_data }) {
       left:'2%',
       right:'1%',
       // top:0,
-      top:'0%',
+      top:'2%',
       bottom:'0%',
       containLabel: true  // ✅ 确保标签在 grid 内部
     },
@@ -97,7 +97,9 @@ export default function ChartPanel({ x_data, y_data }) {
         show:false
       },
       axisLabel: {
-        show:false,
+        // show:false,
+        color: '#858585',
+        fontSize: 10,
         formatter: function (value) {
           if (value >= 1e9) return (value / 1e9).toFixed(2) + 'G';
           if (value >= 1e6) return (value / 1e6).toFixed(2) + 'M';
@@ -121,23 +123,18 @@ export default function ChartPanel({ x_data, y_data }) {
         //   }
         // },
         // symbol: 'none',        // ❗️隐藏数据点圆圈
-        areaStyle: {
-          color: 'rgba(0, 0, 0, 0.1)',
-        },
+        // areaStyle: {
+        //   color: 'rgba(0, 0, 0, 0.1)',
+        // },
         lineStyle: {
+          width: 1,
           color: '#0E9CFF' // #0E9CFF 设置线颜色（波线颜色）
         },
         areaStyle: {
           // 顶部到底部渐变
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {
-              offset: 0,
-              color: 'rgba(14, 156, 255, 0.2)' // 顶部颜色
-            },
-            {
-              offset: 1,
-              color: 'rgba(0, 191, 255, 0)' // 底部透明
-            }
+            { offset: 0, color: '#29183E' },
+            { offset: 1, color: 'rgba(3, 22, 36, 0)' }
           ])
         },
         data: y_data||[],
@@ -146,7 +143,8 @@ export default function ChartPanel({ x_data, y_data }) {
   };
   return (
     <Box style={{ background: 'none',width:"105%" }} borderRadius="md" boxShadow="md" >
-      <ReactECharts option={(x_data?.length ?? 0) > 0 ? option:emptyOption} style={{ width: '100%',background:'none' }} height={{base:"43px",md:"250px"}} />
+    <ReactECharts option={option} style={{ width: '100%',background:'none' }} height={{base:"43px",md:"250px"}} />
+      {/* <ReactECharts option={(x_data?.length ?? 0) > 0 ? option:emptyOption} style={{ width: '100%',background:'none' }} height={{base:"43px",md:"250px"}} /> */}
     </Box>
   );
 }
