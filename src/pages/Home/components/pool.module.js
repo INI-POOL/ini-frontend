@@ -99,7 +99,7 @@ const PoolModuleData = (props) => {
                   {props.data.poolServer || "--"}:{props.data.poolPort||""}
 
                   {hovered && (
-                    <Clipboard.Indicator display="inline-block" marginLeft={0.125} />
+                    <Clipboard.Indicator display="inline-block" marginLeft={"0.35rem"} marginTop={"0.25rem"} />
                   )}
                 </Flex>
               </Clipboard.Trigger>
